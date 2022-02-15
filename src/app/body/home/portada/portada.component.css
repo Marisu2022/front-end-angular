@@ -1,0 +1,26 @@
+.portada-container-fluid-lg {
+    position: relative;
+    background-color: #020210;
+    display: inline-block;
+  }
+  #portada {
+    width: 100%;
+    height: 100%;
+}
+
+    .nombre-container {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 50px;
+        letter-spacing: 0.5em;
+      
+        color: #fcfcff;
+      }
+      
+      .info-container {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+      }
