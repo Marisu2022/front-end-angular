@@ -1,0 +1,25 @@
+.sidebar-container {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    list-style: none;
+    z-index: 1030;
+  
+    background-color: #030f20;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 50px;
+    letter-spacing: 0.2em;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+  }
+  a:link {
+    text-decoration: none;
+    color: #fff;
+  }
+  #navegador {
+    align-items: center;
+    justify-items: center;
+  }
