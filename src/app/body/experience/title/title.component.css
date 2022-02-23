@@ -1,5 +1,4 @@
- /*------------about----------*/
- .about-container-fluid-lg {
+.about-container-fluid-lg {
     width: 75%;
     height: auto;
     padding-top: 80px;
@@ -7,11 +6,4 @@
     padding-right: 60px;
     justify-content: center;
     text-align: justify;
-  
   }
-  .about {
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  

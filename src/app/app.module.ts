@@ -7,6 +7,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { PortadaComponent } from './body/home/portada/portada.component';
 import { SidebarComponent } from './body/home/sidebar/sidebar.component';
 import { AboutComponent } from './body/about/about.component';
+import { TableComponent } from './body/experience/table/table.component';
+import { OthersComponent } from './body/experience/others/others.component';
+import { TitleComponent } from './body/experience/title/title.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -14,8 +20,11 @@ import { AboutComponent } from './body/about/about.component';
     HeaderComponent,
     PortadaComponent,
     SidebarComponent,
-    AboutComponent
-  ],
+    AboutComponent,
+    TableComponent,
+    OthersComponent,
+    TitleComponent,
+],
   imports: [
     BrowserModule,
     AppRoutingModule
