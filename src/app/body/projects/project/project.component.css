@@ -1,0 +1,17 @@
+.projects-container {
+    width: 75%;
+    height: auto;
+    padding: 30px;
+  
+    justify-content: center;
+    align-content: center;
+  }
+  .img-proyecto {
+    width: 50%;
+    height: 50%;
+    float: left;
+    justify-self: center;
+  }
+  .table {
+    padding: 20px;
+  }

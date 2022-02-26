@@ -1,0 +1,9 @@
+/*---------------Proyectos----------*/
+.projects-container-fluid-lg {
+    width: 75%;
+    height: auto;
+    padding: 30px;
+  
+    justify-content: center;
+    align-content: center;
+  }
