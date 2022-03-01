@@ -2,13 +2,15 @@
     position: relative;
     background-color: #020210;
     display: inline-block;
-  }
+    
+      }
+
   #portada {
     width: 100%;
     height: 100%;
 }
 
-    .nombre-container {
+    .nombrecontainer {
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
@@ -22,5 +24,5 @@
       .info-container {
         position: relative;
         display: inline-block;
-        text-align: center;
+        
       }

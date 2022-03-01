@@ -17,6 +17,8 @@ import { SkillsComponent } from './body/skills/skills.component';
 import { SkillComponent } from './body/skills/skill/skill.component';
 import { ProjectsComponent } from './body/projects/projects.component';
 import { ProjectComponent } from './body/projects/project/project.component';
+import { SkillSecondComponent } from './body/skills/skill-second/skill-second.component';
+import { SkillThirdComponent } from './body/skills/skill-third/skill-third.component';
 
 
 
@@ -39,6 +41,8 @@ import { ProjectComponent } from './body/projects/project/project.component';
     SkillComponent,
     ProjectsComponent,
     ProjectComponent,
+    SkillSecondComponent,
+    SkillThirdComponent,
 
 ],
   imports: [
