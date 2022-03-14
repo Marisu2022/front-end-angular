@@ -7,6 +7,9 @@
   justify-content: center;
   align-content: center;
 }
+.btn-group{
+  align-self: flex-end;
+}
 
   
   

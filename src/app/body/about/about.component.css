@@ -11,5 +11,9 @@
   }
   .about {
     padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  
+  .btn-group{
+    align-self: flex-end;
+ }

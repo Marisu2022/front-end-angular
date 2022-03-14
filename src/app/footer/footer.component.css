@@ -1,0 +1,17 @@
+.footer-container-fluid-lg{
+    background-color: #062146;
+    text-align: center;
+    color: #fff;
+    width: 75%;
+    height: 200px;
+    padding: 30px;
+    line-height: 14px;
+    letter-spacing: 0.5em;
+    text-align: center;
+  }
+  
+
+ .edit_trash{
+   padding: 10px;
+   
+ }

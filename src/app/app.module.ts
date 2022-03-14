@@ -19,6 +19,9 @@ import { ProjectsComponent } from './body/projects/projects.component';
 import { ProjectComponent } from './body/projects/project/project.component';
 import { SkillSecondComponent } from './body/skills/skill-second/skill-second.component';
 import { SkillThirdComponent } from './body/skills/skill-third/skill-third.component';
+import { ContactComponent } from './body/contact/contact.component';
+import { ContactFormComponent } from './body/contact/contact-form/contact-form.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -43,6 +46,9 @@ import { SkillThirdComponent } from './body/skills/skill-third/skill-third.compo
     ProjectComponent,
     SkillSecondComponent,
     SkillThirdComponent,
+    ContactComponent,
+    ContactFormComponent,
+    FooterComponent,
 
 ],
   imports: [

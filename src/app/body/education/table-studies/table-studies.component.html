@@ -1,4 +1,5 @@
 <div class="education-container-fluid-lg">
+  <div class="card nat-card">
   <div class="container mt-3">
     <table class="table  table-hover">
       <tbody>
@@ -33,4 +34,24 @@
                     </tbody>
                     </table>
                     </div>
+                     <!---------fuente del ícono----
+          <i class="bi bi-pencil-square"></i>
+          este es el div que contiene el boton editar, al usar group los 
+          botones irán uno al lado del otro
+          ---->
+
+          <div class="btn-group">
+            <div class="btn-edit" onclick="cambiar_parrafo()">
+              <a href="#education" class="btn">
+              <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+            
+            <!----------este es el div que contiene el botón eliminar-->   
+            <div class="btn_trash" onclick= "cambiar_parrafo()">
+              <a href="#education" class="btn">
+              <i class="bi bi-trash"></i>
+            </a>
+            </div>
+            </div> 
 </div>
