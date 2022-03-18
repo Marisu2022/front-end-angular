@@ -22,9 +22,8 @@ import { SkillThirdComponent } from './body/skills/skill-third/skill-third.compo
 import { ContactComponent } from './body/contact/contact.component';
 import { ContactFormComponent } from './body/contact/contact-form/contact-form.component';
 import { FooterComponent } from './footer/footer.component';
-
-
-
+import { PortfolioService } from './servicios/portfolio.service';
+import {HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -53,7 +52,8 @@ import { FooterComponent } from './footer/footer.component';
 ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
