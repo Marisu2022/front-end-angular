@@ -1,28 +1,37 @@
 .portada-container-fluid-lg {
-    position: relative;
-    background-color: #020210;
-    display: inline-block;
-    
-      }
-
-  #portada {
-    width: 100%;
-    height: 100%;
+  
+  background-color: #03031f;
+  display: inline-block;
+  width: 100%;
+  height: auto;
 }
 
-    .nombrecontainer {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 50px;
-        letter-spacing: 0.5em;
-      
-        color: #fcfcff;
-      }
-      
-      .info-container {
-        position: relative;
-        display: inline-block;
-        
-      }
+.profile {
+  position: relative;
+
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  
+}
+
+.profile_img {
+  position: absolute;
+  
+}
+
+.nombre-container{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 50px;
+  letter-spacing: 0.5em;
+
+  color: #fcfcff;
+  position: relative;
+  margin-left:15%;
+    
+}

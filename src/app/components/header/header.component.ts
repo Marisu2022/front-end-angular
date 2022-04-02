@@ -11,7 +11,7 @@ headerList:any;
   constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-  this.headerList=data.header;})}
+    this.datosPortfolio.obtenerDatos().subscribe(data =>{this.headerList=data.header;});
+  }
 
 }
