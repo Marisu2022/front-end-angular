@@ -1,0 +1,43 @@
+.portada-container-fluid-lg {
+  
+  background-color: #ffffff;
+  display: inline-block;
+  width: 75%;
+  height: auto;
+}
+
+.img_profile {
+  position: relative;
+
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+    
+}
+
+
+.background_img {
+  position: absolute;
+  
+}
+
+.nombre-container{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 50px;
+  letter-spacing: 0.5em;
+
+  color: #fcfcff;
+  position: relative;
+  margin-left:15%;
+    
+}
+.btn-group{
+  align-self: flex-end;
+  
+}
+

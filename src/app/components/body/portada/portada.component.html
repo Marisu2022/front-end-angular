@@ -1,0 +1,93 @@
+<section id="home">
+  <div class="portada-container-fluid-lg">
+    <div class="card nat-card">
+      <div>
+        <img
+          class="background_img w-100 h-100"
+          src="assets/imagenes/Group 2.png"
+          alt="Portada"
+        />
+        <img class="img_profile" w-50  h-50     d-flex
+          src = {{miPortfolio.img_profile}}/>
+      </div>
+      <div class="nombre-container">
+        <p>
+          {{ miPortfolio.nombre }}{{ miPortfolio.apellido }} 
+          <br />{{miPortfolio.info}}
+        </p>
+      </div>
+    </div>
+    <div class="btn-group">
+      <div class="btn-edit">
+        <a
+          href="#portada"
+          class="btn"
+          data-bs-toggle="modal"
+          data-bs-target="#portadaModal"
+        >
+          <i class="bi bi-pencil-square"></i
+        ></a>
+      </div>
+
+      <!----------este es el div que contiene el botón eliminar
+      <div class="btn_trash">
+        <i class="bi bi-trash"></i>
+      </div>-->
+    </div>
+      <!---modal de portada-->
+  <div class="modal fade"
+  id="portadaModal"
+  tabindex="-1"
+  aria-hidden="true"
+  aria-label="modalTitle"
+  data-bs-backdrop="static"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modalTitle" id="modalPortada">Portada</h5>
+        <!---x para cerrar-->
+        <button
+          Type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body lg">
+        <form #editForm="ngForm">
+          <label for="nombre">Nombre</label><br>
+          <input ngModel type="text" ngModel="{{miPortfolio.nombre}} " name="nombre"  class="form-control">
+          
+          <label for="apellido">Apellido</label><br>
+          <input ngModel type="text" ngModel="{{miPortfolio.apellido}} " name="apellido"  class="form-control">
+          <label for="info">Información</label><br>
+          <input ngModel type="text" ngModel="{{miPortfolio.info}} " name="info"  class="form-control">
+          <label for="nombre">Url de la imagen de perfil</label><br>
+          <input ngModel type="text" ngModel="{{miPortfolio.img_profile}} " name="URL"  class="form-control">
+        </form>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+          >
+            Guardar Cambios
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Eliminar
+          </button>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  </div>
+  </div>
+
+</section>

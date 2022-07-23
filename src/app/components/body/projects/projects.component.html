@@ -1,0 +1,134 @@
+ <!-------------Proyectos--------->
+ <section id="projects">
+  <div class="projects-container-fluid-lg">
+    <div class="proyectos container">
+      <h2 id="title_section">Proyectos</h2>
+    </div>
+    <table class="table  table-hover">
+      <tbody>
+        <tr *ngFor= "let projects of projects">
+<td>
+<img class="img-juego" [src]="projects.img_proyecto" alt="Aula Juego"></td>
+    <td><b>{{projects.anio}}</b><br>{{projects.herramientas}}<b> <br>{{projects.nombre_proyecto}}</b><br>{{projects.descripcion_proyecto}}
+    </td>
+    
+      <div class="btn-edit">
+        <a
+          href="#projects"
+          class="btn"
+          data-bs-toggle="modal"
+          data-bs-target="#projectsModal"
+        >
+          <i class="bi bi-pencil-square"></i>
+        </a>
+      </div>
+    
+      
+      </tbody>
+                  </table>
+                  <!-- Modal para editar Projects -->
+      <div
+      class="modal fade"
+      id="projectsModal"
+      tabindex="-1"
+      aria-hidden="true"
+      aria-label="modalTitle"
+      data-bs-backdrop="static"
+    >
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header" >
+            <h5 class="modal-title" id="modalprojects">Proyectos</h5>
+            <!---x para cerrar-->
+            <button
+              Type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+
+          </div>
+          <div class="modal-body lg" *ngFor="let projects of projects">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th>Nombre del proyecto</th>
+                    </tr>
+                    <tr> <th>
+                      
+                      <input ngModel type="text" ngModel="{{projects.nombre_proyecto}}" placeholder="Nombre del proyecto"  name="nombre"  class="form-control">
+                      
+                    </th></tr>
+                    <tr>
+                    <th>Imagen Proyecto</th>
+                    <th>Año</th>
+                    
+                  </tr>
+                  <tr>
+                   
+                    <th>
+                      
+                      <input ngModel type="text" ngModel="{{projects.img_proyecto}}" placeholder="imagen"  name="imagen"  class="form-control">
+                      
+                    </th>
+                    <th>
+                      
+                      <input ngModel type="text" ngModel="{{projects.anio}}" placeholder="anio"  name="anio"  class="form-control">
+                      
+                    </th>
+                    </tr>
+                    <tr>
+                    <th>Herramientas</th>
+                    <th>Descripción del proyecto</th>
+                    </tr>
+                    <tr>
+                    <th>
+                      <textarea
+                        type="text"
+                        name="projects"
+                        class="form-control"
+                        ngModel="{{ projects.herramientas}}"
+                        id="herramientas"
+                        placeholder="Herramientas utilizadas"
+                      ></textarea>
+                    </th>
+                    <th>
+                      <textarea
+                        type="text"
+                        name="projects"
+                        class="form-control"
+                        ngModel="{{ projects.descripcion_proyecto}}"
+                        id="descripcion"
+                        placeholder="descripcion del proyecto"
+                      ></textarea>
+                    </th>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+
+            <div class="modal-footer">
+              <button                
+                class="btn btn-primary">    
+                Guardar Cambios
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

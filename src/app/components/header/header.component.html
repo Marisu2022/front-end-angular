@@ -1,17 +1,39 @@
 <!------------------ Cabecera------------------>
-                  
-<header class="header">
-    
-    <div class="logo-container">
-  
-     <img class="ap"src="assets/imagenes/Argentina Programa.png" alt="Argentina Programa">
-      
-     <h4 id="text-ap">Argentina Programa</h4>
-     </div>
 
-     <ul class="d-flex redes-container">         
-      <li *ngFor= "let header of headerList"><img [src]="header.img_header"></li>
-      </ul>       
-      
-    </header>     
+<header class="header">
+  <div class="logo-container">
+    <img
+      class="ap"
+      src="assets/imagenes/Argentina Programa.png"
+      alt="Argentina Programa"
+    />
+
+    <h4 id="text-ap">Argentina Programa</h4>
+  </div>
+
+  <ul class="d-flex redes-container">
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/login">Iniciar Sesión</a>
+    </li>
+    <li>
+      <a class="github"  href="https://github.com/Marisu2022">
+        <i class="bi bi-github"></i>
+      </a></li>
+     
+      <li>
+      <a class="correo" href="mailto:lic.msferro.vla@gmail.com"> <i class="bi bi-envelope-check"></i></a>
+    </li>
+    <li>
+      <a class="linkedin" href="https://www.linkedin.com/in/maria-susana-ferro-3171bb55/">
+    <i class="bi bi-linkedin"></i></a></li>
+     <div class="btn-edit">
+              <a href="#others" target="_blank"class="btn"data-bs-toggle="modal"
+              data-bs-target="#othersModal">
+              <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
     
+    
+    
+  </ul>
+</header>

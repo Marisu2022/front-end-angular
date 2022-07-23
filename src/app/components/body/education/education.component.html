@@ -1,0 +1,121 @@
+<section id="education">
+  <div class="education-container-fluid-lg">
+  <div class="education container">
+    <h2 id="title_section">Educación</h2>
+    </div>
+
+  <div class="card nat-card">
+  <div class="container mt-3">
+    <table class="table  table-hover">
+      <tbody>
+<tr *ngFor= "let education of education">
+  <td>
+  <img class="img-thumbnail" src={{education.img_institution}}/></td>
+      <td>{{education.detalle}}
+      </td>
+      <div class="btn-group">
+        <div class="btn-edit">
+          <a
+            href="#education"
+            class="btn"
+            data-bs-toggle="modal"
+            data-bs-target="#educationModal"
+          >
+            <i class="bi bi-pencil-square"></i>
+          </a>
+        </div></div>
+        </tr>
+       
+                    
+                    </tbody>
+                    
+                    </table>
+                    </div>
+                     <!---------fuente del ícono----
+          <i class="bi bi-pencil-square"></i>
+          este es el div que contiene el boton editar, al usar group los 
+          botones irán uno al lado del otro
+          ---->
+
+          
+            
+            <!----------este es el div que contiene el botón eliminar-  
+            <div class="btn_trash" onclick= "cambiar_parrafo()">
+              <a href="#education" class="btn">
+              <i class="bi bi-trash"></i>
+            </a>
+            </div>
+            </div> 
+  Modal para editar Experiencia -->
+ <div
+ class="modal fade"
+ id="educationModal"
+ tabindex="-1"
+ aria-hidden="true"
+ aria-label="modalTitle"
+ data-bs-backdrop="static"
+>
+ <div
+   class="modal-dialog modal-lg modal-dialog-centered"
+   role="document"
+ >
+   <div class="modal-content">
+     <div class="modal-header" >
+       <h5 class="modal-title" id="modalEducation">Educación</h5>
+       <!---x para cerrar-->
+       <button
+         Type="button"
+         class="btn-close"
+         data-bs-dismiss="modal"
+         aria-label="Close"
+       ></button>
+     </div>
+     <div class="modal-body lg" *ngFor= "let education of education">
+       <div class="table-responsive">
+         <table class="table">
+           <tbody>
+             <tr>
+               <th>Imagen de la Institución</th>
+               <th>Detalle de la titulación(título, Universidad, promedio)</th>
+             </tr>
+             <tr>
+               <th>
+                 
+                 <input ngModel type="text" ngModel="{{education.img_institution}}"  name="UrlImagen"  class="form-control" placeholder="Url imagen institución">
+                 
+               </th>
+               <th> <textarea
+                type="text"
+                name="education"
+                class="form-control"
+                ngModel="{{education.detalle}}"
+                id="name"
+                placeholder="Descripción de la experiencia"
+              ></textarea>
+               </th>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+
+       <div class="modal-footer">
+         <button                
+           class="btn btn-primary">    
+           Guardar Cambios
+         </button>
+         <button
+           type="button"
+           class="btn btn-secondary"
+           data-bs-dismiss="modal"
+         >
+           Eliminar
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+</section>
+

@@ -1,0 +1,107 @@
+<div class="others-container-fluid-lg">
+    <div class="others container mt-3">
+        <div class="card nat-card">
+    <h5 class="text-center">Otros recorridos realizados</h5>
+    
+    <div class="others container mt-3">
+    <table table table-borderless>
+    <tbody>  
+      
+        <tr *ngFor= "let others of others" >
+          <td>{{others.item}}</td>
+          <td>
+          <div class="btn-group">
+            <div class="btn-edit">
+              <a href="#others" target="_blank"class="btn"data-bs-toggle="modal"
+              data-bs-target="#othersModal">
+              <i class="bi bi-pencil-square"></i>
+              </a>
+            </div></div></td>
+
+        </tr>
+        
+    </tbody>
+    </table>
+    </div>
+     <!------fuente del ícono----
+          <i class="bi bi-pencil-square"></i>
+          este es el div que contiene el boton editar, al usar group los 
+          botones irán uno al lado del otro
+          ---->
+          
+            <!---------este es el div que contiene el botón eliminar--
+            <div class="btn_trash" onclick= "cambiar_parrafo()">
+              <a href="#others" class="btn">
+              <i class="bi bi-trash"></i>
+            </a>
+            </div>-->
+          
+             <!-- Modal para editar Others -->
+      <div
+      class="modal fade"
+      id="othersModal"
+      tabindex="-1"
+      aria-hidden="true"
+      aria-label="modalTitle"
+      data-bs-backdrop="static"
+    >
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header" >
+            <h5 class="modal-title" id="modalOthers">Otros recorridos realizados</h5>
+            <!---x para cerrar-->
+            <button
+              Type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body lg" *ngFor="let others of others">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th>Recorrido</th>
+              
+                  </tr>
+                  <tr>
+                    <th>
+                      <textarea
+                        type="text"
+                        name="others"
+                        class="form-control"
+                        ngModel="{{others.item}}"
+                        id="name"
+                        placeholder="Recorrido"
+                      ></textarea>
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="modal-footer">
+              <button                
+                class="btn btn-primary">    
+                Guardar Cambios
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</div>
+

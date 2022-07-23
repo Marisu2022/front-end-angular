@@ -1,0 +1,48 @@
+<div class="iniciar-container shadow p-3 mb-5 bg-white rounded">
+  <h1 class="m-5">Iniciar sesión</h1>
+     <form [formGroup]="form" class="m-5" (ngSubmit)= "onEnviar($event)">
+      
+      <div class="mb-3">
+      <label for="InputEmail1" class="form-label">Email</label>
+      <input
+        type="email"
+        formControlName="email"
+        [ngClass]= "{
+          'is-Invalid': Email?.errors && Email?.touched,
+          'is-valid': !Email?.errors && Email?.touched
+        }"
+        class="form-control"
+        id="InputEmail1">
+           <div *ngIf= "Email?.errors && Email?.touched">
+        <p *ngIf= "Email?.hasError('required')" class="text-danger">
+          Se requiere completar el campo email.
+        </p>
+        <p *ngIf= "Email?.hasError('email')" class="text-danger">
+          El email debe tener un formato válido
+        </p>
+      </div></div>
+    
+    
+      <div class="mb-3">
+        <label for="InputPassword" class="form-label">Password</label>
+      <input
+        type="Password"
+        formControlName="password"
+        [ngClass]= "{
+          'is-Invalid': Password?.errors && Password?.touched,
+          'is-valid': !Password?.errors && Email?.touched
+        }"
+        class="form-control"
+        id="InputPassword">
+           <div *ngIf= "Password?.errors && Password?.touched">
+        <p *ngIf= "Password?.hasError('required')" class="text-danger">
+          Se requiere completar el campo contraseña.
+        </p>
+        <p *ngIf= "Password?.hasError('password')" class="text-danger">
+          La contraseña no es válida
+        </p>
+        </div>
+      </div>
+        <button type="submit" class="btn btn-secondary">Enviar</button>
+</form>
+</div>

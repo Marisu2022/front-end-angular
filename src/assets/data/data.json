@@ -1,22 +1,192 @@
+{
+  "nombre": "María Susana",
+  "apellido":"Ferro",
+  "info": "Full Stack Developer Jr.",
+  "img_profile": "assets/imagenes/portada3.png",
+ "about": "Mi trayectoria laboral inicia hace treinta años y conjuga el desarrollo de proyectos creativos mediados por TIC, la docencia y la gestión de diversas áreas de gobierno a nivel municipal y provincial. Incorporé el estudio y la puesta en marcha de nuevas tecnologías en cada desafío, buscando brindar un servicio de vanguardia. Considero primordiales el trabajo colaborativo y la planificación estratégica de todo proceso creativo. Actualmente jubilada, busco formar parte de nuevos proyectos innovadores y de impacto social.",
 
-	 { 	"nombre": "María Susana Ferro",
-		"info": "Full Stack Developer Jr.",
-		"img_profile":"./src/assets/imagenes/portada3.png",
-	
-	 
-	"header":[{
-			"img_header": "https://img.icons8.com/material-outlined/32/000000/github.png"
-		},
-		{
-			"img_header": "https://img.icons8.com/ios-glyphs/32/000000/linkedin.png"
-		},
-		{
-			"img_header": "https://img.icons8.com/small/32/000000/whatsapp.png"
-		},
-		{
-			"img_header": "https://img.icons8.com/material-outlined/32/000000/find-email.png"
-		}
-	]
+  "header": [
+    {
+      "img": "https://img.icons8.com/material-outlined/32/000000/github.png",
+      "link":"https://github.com/Marisu2022"
+    },
+    {
+      "img": "https://img.icons8.com/ios-glyphs/32/000000/linkedin.png",
+      "link":"https://github.com/Marisu2022"
+    },
+    {
+      "img": "https://img.icons8.com/small/32/000000/whatsapp.png"
+    },
+    {
+      "img": "https://img.icons8.com/material-outlined/32/000000/find-email.png",
+      "link":"mailto:lic.msferro.vla@gmail.com"
+    }
+  ],
+  
 
-	
-	}
+  "experience": [
+    {
+      "img_bulletPoint": "assets/imagenes/Ellipse 62.png",
+      "periodo": "Actualmente",
+      "descripcion": "Contenidista de la revista virtual: 'Maletín de ideas educativas'de Red Paideia.Diseño y gestión del sitio. www.redpaideia.com"
+    },
+    {
+      "img_bulletPoint": "assets/imagenes/Ellipse 62.png",
+      "periodo": "2015 - 2021",
+      "descripcion": "Coordinadora general, coordinadora de tutores o tutor virtual de diferentes cursos virtuales de formación docente INFOD "
+    },
+    {
+      "img_bulletPoint": "assets/imagenes/Ellipse 62.png",
+      "periodo": "2016 - 2017",
+      "descripcion": "Presidente del Consejo Provincial de Educación de la provincia del Neuquén."
+    },
+    {
+      "periodo": "2015",
+      "descripcion": "Secretaria de Gobierno de la Municipalidad de Villa La Angostura."
+    },
+    {
+      "periodo": "2012-2014",
+      "descripcion": "Directora Provincial de Enseñanza Inicial del Neuquén. Consejo Provincial de Educación del Ministerio de Gobierno, Educación y Justicia."
+    },
+    {
+      "periodo": "2008",
+      "descripcion": "Convencional Constituyente, mandato cumplido. 23 proyectos presentados para la Primer Carta Orgánica de Villa La Angostura."
+    },
+    {
+      "periodo": "1992 - 2018",
+      "descripcion": "Docente Titular de la Provincia de Neuquén."
+    }
+  ],
+  "others": [
+    {
+      "item": "Autora del libro: “Planificación creativa para clases virtuales” Editorial Autores de Argentina. 2020"
+    },
+    {
+      "item": " Profesora a cargo Seminario Taller virtual y presencial: “Uso Didáctico de las TIC” Instituto de Formación Docente 8, Junín de los Andes."
+    },
+    {
+      "item": "Integrante del equipo técnico pedagógico de redacción: “Documentos de Desarrollo Curricular para las Instituciones Educativas de la Provincia del Neuquén."
+    },
+    {
+      "item": "Responsable de gestión y organización de las Jornadas Intensivas de Nivel Inicial Neuquén .PROMER I"
+    },
+    {
+      "item": "Dictó curso Juego en el Nivel Inicial en Coordinación con referentes del Plan de Lectura."
+    },
+    {
+      "item": "Responsable y autora de dos proyectos registrados a nivel provincial:'Limpiemos Nuestra Escuela de Ruidos'y 'Recuperemos los Valores a través del Arte'"
+    },
+    {
+      "item": "Ganador Concurso de Proyectos Innovadores año 2000.Proyecto: “Recuperemos los valores a través del Arte” Escuela Nº 104, Villa La Angostura."
+    },
+    {
+      "item": "Expositora X Encuentro de Arte y Educación año 2008"
+    },
+    {
+      "item": "Coautora del libro: 'Historias desde la Palabra la Imagen y el Sonido' reconocido por el Consejo Provincial de Educación de Neuquén."
+    },
+    {
+      "item": "Dictó diferentes cursos de capacitación a nivel provincial: 'El Juego en el Nivel Inicial' 'Juego y TIC en el Nivel Inicial'. Marco: Jornadas Intensivas para Docentes."
+    }
+  ],
+  "education": [
+    {
+      "img_institution": "assets/imagenes/uncuyo.png",
+      "detalle": "Licenciada en Creatividad Educativa - Universidad Nacional de Cuyo - Promedio 9.96"
+    },
+    {
+      "img_institution": "assets/imagenes/INFoD_logo_pie@2x.png",
+      "detalle": "Especialista en Educación y Tecnología - INFOD - Promedio 9.90"
+    },
+    {
+      "img_institution": "assets/imagenes/uniRioNegro.png",
+      "detalle": "Diplomada en Conflictividad Social, Urbana y Territorial - UNR "
+    },
+    {
+      "img_institution": "assets/imagenes/USAL.jpg",
+      "detalle": "Profesora de Nivel Inicial - Universidad del Salvador - INFOD - Promedio 9.90"
+    },
+    {
+      "img_institution": "assets/imagenes/cic.jpg",
+      "detalle": "Bachiller con orientación docente - Colegio Inmaculada Concepción - Promedio 8.98"
+    }
+  ],
+  "courses": [
+    {
+     
+      "curso": "'Sé programar' Argentina Programa - Primera etapa"
+    },
+    {
+      
+      "curso": "'Yo programo' Argentina Programa - Segunda etapa"
+    },
+    {
+     
+      "curso": "'Diseño Páginas Web' Cepaho 19 - Consejo Provincial de Educación del Neuquén"
+    },
+    {
+      
+      "curso": "'Java Script' Cepaho 19 - Consejo Provincial de Educación del Neuquén"
+    },
+    {
+      
+      "curso": " 'Introducción a la programación en Android con Java' -  UTN.BA"
+    },
+    {
+      
+      "curso": " 'Liderazgo Político y Social'- Universidad Católica Argentina"
+    }
+  ],
+  "projects": [
+    
+    {
+      "img_proyecto": "assets/imagenes/Aula Juego.jpg.png",
+      "anio":"2015",
+      "herramientas": "Realizado con Excelearning",
+      "nombre_proyecto":"Aula virtual para formación docentes de Nivel Inicial",
+      "descripcion_proyecto":"Aula virtual para formación docentes de Nivel Inicial"
+    },
+    {
+      "anio":"2019",
+      "img_proyecto": "assets/imagenes/Paideia.jpg.png",
+      "herramientas": "Realizado con el constructor de sitios web de WNPOWER Argentina",
+      "nombre_proyecto":"Maletín de ideas educativas",
+      "descripcion_proyecto":"Gestión del sitio y de la revista virtual www.redpaideia.com.ar"
+    },
+    {
+      "anio":"En proceso",
+      "img_proyecto": "assets/imagenes/RAM.jpg.png",
+      "herramientas": "FIGMA - Angular - Netbeans",
+      "nombre_proyecto":"RAM",
+      "descripcion_proyecto":"App para ejercitar la memoria y prevenir el Alzheimer"
+    } 
+    
+  ],
+
+  "percent_circle1": 90,
+  "text_circle1": "Trabajo Colaborativo",
+  "percent_circle2": 85,
+  "text_circle2": "Planificación Estratégica",
+  "percent_circle3": 80,
+  "text_circle3": "Gestión de Conflictos",
+  "percent_circle4": 80,
+  "text_circle4": "Creatividad",
+
+  "percent_circle5": 85,
+  "text_circle5": "HTML",
+  "percent_circle6": 75,
+  "text_circle6": "CSS",
+  "percent_circle7": 80,
+  "text_circle7": "FIGMA",
+  "percent_circle8": 60,
+  "text_circle8": "Angular",
+
+  "percent_circle9": 60,
+  "text_circle9": "GIT GITHUB",
+  "percent_circle10": 45,
+  "text_circle10": "JavaScript",
+  "percent_circle11": 55,
+  "text_circle11": "JAVA",
+  "percent_circle12": 50,
+  "text_circle12": "SpringBoot"
+}

@@ -1,0 +1,120 @@
+<section id="experience">
+  <div class="experience-container-fluid-lg">
+    <div class="experiencia container">
+      <h2 id="title_section">Experiencia</h2>
+    </div>
+    <div class="experience container mt-3">
+      <div class="card nat-card">
+        <table class="table table-striped">
+          <tbody id="experience-table">
+            <tr *ngFor="let experience of experience">
+              <td><img src="assets/imagenes/Ellipse 62.png" alt="viñeta" /></td>
+              <td>{{ experience.periodo }}</td>
+              <td>{{ experience.descripcion }}</td>
+              <td>
+                <!---------fuente del ícono----
+              <i class="bi bi-pencil-square"></i>
+              este es el div que contiene el boton editar, al usar group los 
+              botones irán uno al lado del otro
+              ---->
+                <div class="btn-group">
+                  <div class="btn-edit">
+                    <a
+                      href="#experience"
+                      class="btn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#experienceModal"
+                    >
+                      <i class="bi bi-pencil-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!---------fuente del ícono----
+          <i class="bi bi-pencil-square"></i>
+          este es el div que contiene el boton editar, al usar group los 
+          botones irán uno al lado del otro
+          ---->
+
+        <!----------este es el div que contiene el botón eliminar--  
+            <div class="btn_trash" onclick= "cambiar_parrafo()">
+                <i class="bi bi-trash"></i>
+          
+            </div>-->
+      </div>
+      <!-- Modal para editar Experiencia -->
+      <div
+        class="modal fade"
+        id="experienceModal"
+        tabindex="-1"
+        aria-hidden="true"
+        aria-label="modalTitle"
+        data-bs-backdrop="static"
+      >
+        <div
+          class="modal-dialog modal-lg modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header" >
+              <h5 class="modal-title" id="modalExperience">Experiencia</h5>
+              <!---x para cerrar-->
+              <button
+                Type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body lg" *ngFor="let experience of experience">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>Periodo</th>
+                      <th>Descripcion</th>
+                    </tr>
+                    <tr>
+                      <th>
+                        
+                        <input ngModel type="text" ngModel="{{experience.periodo}}" placeholder="periodo"  name="periodo"  class="form-control">
+                        
+                      </th>
+                      <th>
+                        <textarea
+                          type="text"
+                          name="experience"
+                          class="form-control"
+                          ngModel=""
+                          id="name"
+                          placeholder="Descripción de la experiencia"
+                        ></textarea>
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="modal-footer">
+                <button                
+                  class="btn btn-primary">    
+                  Guardar Cambios
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

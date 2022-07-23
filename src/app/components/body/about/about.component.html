@@ -1,0 +1,94 @@
+<section id="about">
+  <div class="about-container-fluid-lg">
+    <div class="about-container">
+      <h2 id="title_section">Sobre mi</h2>
+      <div class="card nat-card">
+        <p class="about" id="about_me">{{ miPortfolio.about }}</p>
+        <!---div oculto que aparece para editar------
+      <div>
+        
+        <input id="edit-about" placeholder="Sobre mi" type="text"
+        oninput="myFunction3(this.value)"
+      style="display:none">
+    </div>-->
+        <!---------fuente del ícono----
+  <i class="bi bi-pencil-square"></i>
+  este es el div que contiene el boton editar, al usar group los 
+  botones irán uno al lado del otro
+  ---->
+        <div class="btn-group">
+          <div class="btn-edit">
+            <a
+              href="#about"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#aboutModal"
+            >
+              <i class="bi bi-pencil-square"></i>
+            </a>
+          </div>
+          <!----------este es el div que contiene el botón eliminar  ---->
+          <div class="btn_trash" onclick="eliminar_about()">
+            <a href="#about" class="btn">
+              <i class="bi bi-trash"></i>
+            </a>
+          </div>
+          <!---modal de about-->
+
+          <div
+            class="modal fade"
+            id="aboutModal"
+            
+            tabindex="-1"
+            aria-hidden="true"
+            aria-label="modalAbout"
+            data-bs-backdrop="static"
+          >
+            <div class="modal-dialog modal-lg modal-dialog-centered"
+              role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modalTitleAbout" id="modalTitleAbout">Sobre Mi</h5>
+                  <!---x para cerrar-->
+                  <button
+                    Type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body lg">
+                  <textarea
+                    type="text"
+                    ngModel="{{ miPortfolio.about }}"
+                    name="about"
+                    class="form-control"
+                    id="name"
+                    placeholder="About"
+                  ></textarea>
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Guardar Cambios
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

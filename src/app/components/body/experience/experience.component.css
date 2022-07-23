@@ -1,0 +1,13 @@
+.experience-container-fluid-lg {
+    width: 75%;
+    height: auto;
+    padding-top: 80px;
+    padding-left: 60px;
+    padding-right: 60px;
+    justify-content: center;
+    text-align: justify;
+    }
+          .btn-group{
+        align-self: flex-end;
+      }
+      

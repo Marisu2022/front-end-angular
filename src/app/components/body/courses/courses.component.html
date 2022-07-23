@@ -1,0 +1,95 @@
+<div class="education-container-fluid-lg">
+  <div class="others container mt-3">
+    <h5 class="text-center">Algunos cursos realizados</h5>
+  </div>
+  <div class="container mt-3">
+    <table class="table table-striped">
+      <tbody>
+        <tr *ngFor="let courses of courses">
+          <td>
+            <img src="assets/imagenes/Ellipse 62.png" alt="viñeta"/>
+          </td>
+          <td>
+            <p>{{ courses.curso }}</p>
+          </td>
+          <div class="btn-group">
+            <div class="btn-edit">
+              <a href="#courses" target="_blank"class="btn"data-bs-toggle="modal"
+              data-bs-target="#coursesModal">
+              <i class="bi bi-pencil-square"></i>
+              </a>
+            </div></div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+ <!-- Modal para editar Courses -->
+ <div
+ class="modal fade"
+ id="coursesModal"
+ tabindex="-1"
+ aria-hidden="true"
+ aria-label="modalTitle"
+ data-bs-backdrop="static"
+>
+ <div
+   class="modal-dialog modal-lg modal-dialog-centered"
+   role="document"
+ >
+   <div class="modal-content">
+     <div class="modal-header" >
+       <h5 class="modal-title" id="modalCourses">Cursos</h5>
+       <!---x para cerrar-->
+       <button
+         Type="button"
+         class="btn-close"
+         data-bs-dismiss="modal"
+         aria-label="Close"
+       ></button>
+     </div>
+     <div class="modal-body lg" *ngFor="let courses of courses">
+       <div class="table-responsive">
+         <table class="table">
+           <tbody>
+             <tr>
+               <th>Curso</th>
+         
+             </tr>
+             <tr>
+               <th>
+                 <textarea
+                   type="text"
+                   name="others"
+                   class="form-control"
+                   ngModel="{{courses.curso}}"
+                   id="name"
+                   placeholder="Curso"
+                 ></textarea>
+               </th>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+
+       <div class="modal-footer">
+         <button                
+           class="btn btn-primary">    
+           Guardar Cambios
+         </button>
+         <button
+           type="button"
+           class="btn btn-secondary"
+           data-bs-dismiss="modal"
+         >
+           Eliminar
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+
+
