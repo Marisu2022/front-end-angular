@@ -22,7 +22,7 @@ export class OthersComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.findAll().subscribe(data => 
+    this.datosPortfolio.getDatos().subscribe(data => 
       {this.others= data.others;
         });
         //está logueado?

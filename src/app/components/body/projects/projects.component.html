@@ -12,7 +12,7 @@
     <td><b>{{projects.anio}}</b><br>{{projects.herramientas}}<b> <br>{{projects.nombre_proyecto}}</b><br>{{projects.descripcion_proyecto}}
     </td>
     
-      <div class="btn-edit">
+      <div class="btn-edit"*ngIf="isLogged">
         <a
           href="#projects"
           class="btn"

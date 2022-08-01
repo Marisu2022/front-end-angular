@@ -5,3 +5,84 @@
     justify-content: center;
     align-content: center;
   }
+  .btn-group{
+    align-self: flex-end;
+ }
+ 
+  
+
+
+
+
+.modal-dialog {
+    width: 50%;
+    padding: 15px;
+    justify-content: center;
+    align-self: center;
+    top: 10%;
+    left: 25%;
+    background-color: #080715;
+}
+
+
+    
+.modal-body {
+    padding: 10px;
+}
+
+
+
+.modal-header h5 {
+    color: #080535;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.modal-content {
+    padding: 20px;
+    
+}
+
+.form {
+    line-height: 20px;
+}
+
+.modal-body form label {
+    line-height: 7px;
+    margin-top: 5px;
+    color:#080535;
+}
+
+.modal-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 10px 0px 10px;
+    
+}
+
+.modal-footer button {
+    border: none;
+    color: #080535;
+    margin: 5px;
+    padding: 2px 5px;
+    border-color: none;
+
+}
+
+.modal-footer .boton-editar {
+    border: none;
+    color: #080535;
+    margin: 5px;
+    padding: 2px 5px;
+    border-color: none;
+}
+
+.modal-body form input {
+    width: 100%;
+}
+
+#update-experiencia-modal {
+    padding: 3px 5px;
+    color: #080535;
+}

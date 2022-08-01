@@ -11,7 +11,7 @@
           <td>{{others.item}}</td>
           <td>
           <div class="btn-group">
-            <div class="btn-edit">
+            <div class="btn-edit"*ngIf="isLogged">
               <a href="#others" target="_blank"class="btn"data-bs-toggle="modal"
               data-bs-target="#othersModal">
               <i class="bi bi-pencil-square"></i>

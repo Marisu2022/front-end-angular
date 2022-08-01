@@ -24,7 +24,7 @@ isAdmin = false
     private router: Router) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.findAll().subscribe(data=>{
+    this.datosPortfolio.getDatos().subscribe(data=>{
       this.miPortfolio = data;
     });
 

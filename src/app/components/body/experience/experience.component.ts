@@ -23,7 +23,7 @@ export class ExperienceComponent implements OnInit {
     
 
   ngOnInit() {
-    this.datosPortfolio.findAll().subscribe(data => 
+    this.datosPortfolio.getDatos().subscribe(data => 
     {this.experience= data.experience;
       });
       //está logueado?

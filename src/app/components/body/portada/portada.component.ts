@@ -20,7 +20,7 @@ export class PortadaComponent implements OnInit {
   constructor(private datosPortfolio:PortfolioService,private tokenService: TokenService,
     private router:Router) { }
 
-  ngOnInit(){ this.datosPortfolio.findAll().subscribe(data=>{
+  ngOnInit(){ this.datosPortfolio.getDatos().subscribe(data=>{
     this.miPortfolio = data;
   });
   

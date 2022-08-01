@@ -14,16 +14,35 @@ import { About } from 'src/app/models/about';
 export class AboutComponent implements OnInit {
  public abouts:About[]=[];
   miPortfolio:any;
+  roles!: string[];
+isLogged = false;
+isAdmin = false
  
    constructor(
     //inyectamos el servicio que importamos
-    private datosPortfolio:PortfolioService
+    private datosPortfolio:PortfolioService,private tokenService: TokenService,private router:Router
    ) 
    { }
 
-  ngOnInit(){ this.datosPortfolio.findAll().subscribe(data=>{
-      this.miPortfolio = data;
-    })
+  ngOnInit():void{ this.datosPortfolio.getDatos().subscribe(data=>{
+      this.miPortfolio = data.about;
+    });
+//está logueado?
+if(this.tokenService.getToken()){
+  this.isLogged = true;
+  return console.log(`${this.isLogged} + Ya estás logueado`)
+}else{
+  this.isLogged = false;
+};
+this.getdatos();
 
-
-}}
+}
+private getdatos(){
+this.datosPortfolio.getabout().subscribe(
+(data:About[])=>{
+  this.miPortfolio.about = data;
+  console.log(this.miPortfolio.about)
+}
+) 
+};
+}

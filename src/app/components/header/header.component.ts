@@ -22,7 +22,7 @@ constructor(
   
       ) { }
 
-  ngOnInit() { this.datosPortfolio.findAll().subscribe(data => {
+  ngOnInit() { this.datosPortfolio.getDatos().subscribe(data => {
     this.miPortfolio = data;
   })
   
