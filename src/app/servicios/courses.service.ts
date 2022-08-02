@@ -7,9 +7,7 @@ import {Observable}from 'rxjs';
   providedIn: 'root'
 })
 export class CoursesService {
-  editEducacion(value: any){ throw new Error('Method not implemented.');
-
-  }
+  
 private backendUrl:String = environment.apiBaseUrl;
 
 constructor(private httpClient: HttpClient) { }

@@ -27,16 +27,15 @@
               <i class="bi bi-pencil-square"></i>
             </a>
           </div>
-          <!----------este es el div que contiene el botón eliminar  ---->
+          <!----------este es el div que contiene el botón eliminar  ----
           <div class="btn_trash" onclick="eliminar_about()">
             <a href="#about" class="btn">
               <i class="bi bi-trash"></i>
             </a>
-          </div>
+          </div>-->
           <!---modal de about-->
 
-          <div
-            class="modal fade"
+          <div class="modal fade"
             id="aboutModal"
             
             tabindex="-1"
@@ -60,7 +59,7 @@
                 <div class="modal-body lg">
                   <textarea
                     type="text"
-                    ngModel="{{ miPortfolio.about }}"
+                    ngModel= "{{ miPortfolio?.about }}"
                     name="about"
                     class="form-control"
                     id="name"
