@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable}from 'rxjs';
 import { About } from '../models/about';
-import { Courses } from '../models/courses';
 import { Experience } from '../models/experience';
 import { Header } from '../models/header';
 import { Others } from '../models/others';
@@ -10,7 +9,7 @@ import { Persona } from '../models/persona';
 import { Portada } from '../models/portada';
 import { Projects } from '../models/projects';
 import { Skill } from '../models/skill';
-import{Education } from '../models/education';
+
 
 
 @Injectable({
@@ -36,13 +35,9 @@ export class PortfolioService {
   public getheader():Observable<Header[]>{
     return this.httpClient.get<Header[]>(`${this.backendUrl}ver/header`);
   }
-  public getabout():Observable<About[]>{
-    return this.httpClient.get<About[]>(`${this.backendUrl}/ver/about`);
-  }
-  
-public geteducation():Observable<Education[]>{
-  return this.httpClient.get<[Education]>(`${this.backendUrl}ver/education`);
-}
+ 
+ 
+
 public getexperience():Observable<Experience[]>{
   return this.httpClient.get<[Experience]>(`${this.backendUrl}ver/experience`);
 }
@@ -64,15 +59,12 @@ public getprojects():Observable<Projects[]>{
 
 
   
-  public postnewseducation(education:Education):Observable<any>{
-    return this.httpClient.post<any>(`${this.backendUrl}new/education`, education);
-  }
-  public postnewabout(about:About):Observable<any>{
-    return this.httpClient.post<any>(`${this.backendUrl}new/about`, about);
-  }
+ 
+  
   public postnewheader(header:Header):Observable<any>{
     return this.httpClient.post<any>(`${this.backendUrl}new/header`, header);
   }
+  
   
   public postnewexperience(experience:Experience):Observable<any>{
     return this.httpClient.post<any>(`${this.backendUrl}new/experience`, experience);
@@ -93,16 +85,13 @@ public getprojects():Observable<Projects[]>{
   public detallepersona(id: number): Observable<any>{
     return this.httpClient.get<any>(`${this.backendUrl}detallepersona/${id}`);
   }
-  public detalleabout(id: number): Observable<any>{
-    return this.httpClient.get<any>(`${this.backendUrl}detalleabout/${id}`);
-  }
+  
  
-  public detalleeducation(id: number): Observable<any>{
-    return this.httpClient.get<any>(`${this.backendUrl}detalleeducation/${id}`);
-  }
+ 
   public detalleexperience(id: number): Observable<any>{
     return this.httpClient.get<any>(`${this.backendUrl}detalleexperience/${id}`);
   }
+  
   public detalleheader(id: number): Observable<any>{
     return this.httpClient.get<any>(`${this.backendUrl}detalleheader/${id}`);
   }
@@ -124,13 +113,10 @@ public getprojects():Observable<Projects[]>{
 public updatepersona(id:number, persona: Persona):Observable<any>{
   return this.httpClient.put<any>(`${this.backendUrl}editar/persona/${id}`, persona);
 }
-public updateabout(id:number, about: About):Observable<any>{
-  return this.httpClient.put<any>(`${this.backendUrl}editar/about/${id}`, about);
-}
 
-public updateducation(id:number,education: Education):Observable<any>{
-  return this.httpClient.put<any>(`${this.backendUrl}editar/education/${id}`,education);
-}
+
+
+
 public updateexperience(id:number,experience: Experience):Observable<any>{
   return this.httpClient.put<any>(`${this.backendUrl}editar/experience/${id}`,experience);
 }
@@ -152,15 +138,12 @@ public updateskill(id:number,skill: Skill):Observable<any>{
 
 
 //Borrar datos del porfolio
-public deleteeducation(id:number):Observable<any>{
-  return this.httpClient.delete<any>(`${this.backendUrl}delete/${id}`);
-}
+
 public deletepersona(id:number):Observable<any>{
   return this.httpClient.delete<any>(`${this.backendUrl}delete/${id}`);
 }
-public deleteabout(id:number):Observable<any>{
-  return this.httpClient.delete<any>(`${this.backendUrl}delete/${id}`);
-}
+
+
 
 public deleteexperience(id:number):Observable<any>{
   return this.httpClient.delete<any>(`${this.backendUrl}delete/${id}`);

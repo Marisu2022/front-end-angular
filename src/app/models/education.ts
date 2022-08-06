@@ -1,13 +1,15 @@
 export class Education {
     id?: number;
-    detalle: string;
+    
     img_institution: string;
+    detalle: string;
     
 
 
-    constructor(detalle: string, img_institution: string) {
-        this.detalle = detalle
+    constructor(img_institution: string,detalle: string) {
+       
         this.img_institution = img_institution;
+        this.detalle = detalle;
 
     }
 }

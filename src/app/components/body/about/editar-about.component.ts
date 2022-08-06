@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { About } from 'src/app/models/about';
+import { AboutService } from 'src/app/servicios/about.service';
 
 @Component({
   selector: 'app-editar-about',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar-about.component.css']
 })
 export class EditarAboutComponent implements OnInit {
-
-  constructor() { }
+  about!: About;
+  id!: number;
+  
+  constructor(private aboutService: AboutService,private activatedRoute: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
-  }
+  }}
 
-}
+  
+
+
+
+

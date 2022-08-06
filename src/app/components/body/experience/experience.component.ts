@@ -8,7 +8,7 @@ import { TokenService } from 'src/app/servicios/token.service';
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css'],
-  providers: [PortfolioService]
+  
 })
 export class ExperienceComponent implements OnInit {
  public experience: Experience[]=[];

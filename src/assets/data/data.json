@@ -3,8 +3,9 @@
   "apellido":"Ferro",
   "info": "Full Stack Developer Jr.",
   "img_profile": "assets/imagenes/portada3.png",
- "about": "Mi trayectoria laboral inicia hace treinta años y conjuga el desarrollo de proyectos creativos mediados por TIC, la docencia y la gestión de diversas áreas de gobierno a nivel municipal y provincial. Incorporé el estudio y la puesta en marcha de nuevas tecnologías en cada desafío, buscando brindar un servicio de vanguardia. Considero primordiales el trabajo colaborativo y la planificación estratégica de todo proceso creativo. Actualmente jubilada, busco formar parte de nuevos proyectos innovadores y de impacto social.",
-
+ 
+ "about": [
+  {"aboutMe": "Mi trayectoria laboral inicia hace treinta años y conjuga el desarrollo de proyectos creativos mediados por TIC, la docencia y la gestión de diversas áreas de gobierno a nivel municipal y provincial. Incorporé el estudio y la puesta en marcha de nuevas tecnologías en cada desafío, buscando brindar un servicio de vanguardia. Considero primordiales el trabajo colaborativo y la planificación estratégica de todo proceso creativo. Actualmente jubilada, busco formar parte de nuevos proyectos innovadores y de impacto social."}],
   "header": [
     {
       "img": "https://img.icons8.com/material-outlined/32/000000/github.png",
@@ -91,7 +92,7 @@
   ],
   "education": [
     {
-      "img_institution": "assets/imagenes/uncuyo.png",
+      "img_institution": "https://drive.google.com/file/d/1q7ys3SNtg5Fhcs00UdAJi3uB0HRuQT53/view?usp=sharing",
       "detalle": "Licenciada en Creatividad Educativa - Universidad Nacional de Cuyo - Promedio 9.96"
     },
     {

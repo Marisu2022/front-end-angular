@@ -1,1 +1,24 @@
-<p>nuevo-education works!</p>
+
+<div class="container-mt-3 m-2 p-2 ">
+    <h3 class="m-4 p-4">Agregar Trayecto educativo</h3>
+    <div class="row">
+        <div class="col-md8- mx-auto-8">
+             <form (ngSubmit)="postNewEducation()" novalidate #f="ngForm">
+                                   
+                <div class="form-group">
+                    <label for="img"> Logo institución: </label>
+                    <input type="text" class="form-control" id="img_institución" name="education" placeholder="Url imagen institución"
+                    [(ngModel)]="img_institution" required>
+            </div>
+            <div class="form-group">
+                    <label for="detalle"> Detalle (título, Universidad y promedio): </label>
+                    <input type="text" class="form-control" id="detalle" name="detalle" placeholder="Descripción de la experiencia"
+                    [(ngModel)]="detalle" required>
+                </div>
+                
+                <button class="btn btn-warning btn-block m-2" [disabled]="!f.valid" >Agregar</button>
+                <button class="btn btn-success btn-block m-2" routerLink="/portfolio">Finalizar</button>
+             </form>
+        </div>
+    </div>
+</div>

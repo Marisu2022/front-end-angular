@@ -18,9 +18,9 @@ export class CoursesComponent implements OnInit {
   public courses:Courses[]=[];
   public updateCourses: Courses | undefined;
   public deleteCourses: Courses | undefined;
-  isLogged:boolean= false;
+  isLogged= false;
   roles!: string[];
-  isAdmin:boolean = false
+  isAdmin= false
 
 
 
@@ -28,7 +28,7 @@ export class CoursesComponent implements OnInit {
     private router:Router) { }
 
     ngOnInit() {
-      this.getCourses()
+      this.coursesService.getCourses()
       if(this.tokenService.getToken()){
         this.isLogged = true;
          }else{

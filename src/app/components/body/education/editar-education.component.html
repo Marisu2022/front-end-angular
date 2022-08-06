@@ -1,1 +1,26 @@
-<p>editar-education works!</p>
+
+<p class="m-2 p-2">Editar trayecto educativo</p>    
+<div class="container" > 
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                
+                <div class="form-group">
+                    <label for="img"> imagen:</label>
+                    <input type="text" class="form-control" id="img" name="img"
+                    [(ngModel)]="education.img_institution" required>
+                </div>
+                <div class="form-group">
+                    <label for="career"> titulo: </label>
+                    <input type="text" class="form-control" id="career" name="career"
+                    [(ngModel)]="education.detalle" required>
+                </div>
+                
+                
+                
+                <button class="btn btn-outline-success btn-block m-2" [disabled]="!f.valid">Actualizar</button>
+                <button class="btn btn-outline-success btn-block m-2" routerLink="/porfolio">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
