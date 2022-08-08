@@ -8,6 +8,7 @@ import { EditarEducationComponent } from './components/body/education/editar-edu
 import { NuevoEducationComponent } from './components/body/education/nuevo-education.component';
 import { NuevoExperienceComponent } from './components/body/experience/nuevo-experience.component';
 import { NuevoOthersComponent } from './components/body/others/nuevo-others/nuevo-others.component';
+import { NuevoProjectsComponent } from './components/body/projects/nuevo-projects/nuevo-projects.component';
 import { NuevoSkillComponent } from './components/body/skill/nuevo-skill.component';
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'newothers', component: NuevoOthersComponent },
   { path: 'newcourses', component: NuevoCoursesComponent },
   { path: 'newskill', component: NuevoSkillComponent },
+  { path: 'newprojects', component: NuevoProjectsComponent },
   { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
 ];
 

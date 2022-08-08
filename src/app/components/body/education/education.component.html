@@ -95,13 +95,15 @@
                       <tr>
                         <th>
                           <div class="form-group">
-                            <label for="img"> imagen:</label>
+                            <label for="img_institution"> imagen:</label>
                             <input
+                            ngModel
                               type="text"
-                              class="form-control"
-                              id="img"
-                              name="img"
                               [(ngModel)]="education.img_institution"
+                              placeholder="img_institution"
+                              name="img_institution"
+                              class="form-control"
+                              id="img_institution"
                               required
                             />
                           </div>

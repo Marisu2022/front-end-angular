@@ -40,6 +40,7 @@ import { NuevoExperienceComponent } from './components/body/experience/nuevo-exp
 import { NuevoOthersComponent } from './components/body/others/nuevo-others/nuevo-others.component';
 import { SkillComponent } from './components/body/skill/skill.component';
 import { NuevoSkillComponent } from './components/body/skill/nuevo-skill.component';
+import { NuevoProjectsComponent } from './components/body/projects/nuevo-projects/nuevo-projects.component';
 
 
 
@@ -77,7 +78,8 @@ import { NuevoSkillComponent } from './components/body/skill/nuevo-skill.compone
     NuevoExperienceComponent,
     NuevoOthersComponent,
     SkillComponent,
-    NuevoSkillComponent
+    NuevoSkillComponent,
+    NuevoProjectsComponent
 
 
 ],

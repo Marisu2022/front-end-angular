@@ -1,46 +1,61 @@
- <!-------------Proyectos--------->
- <section id="projects">
+<!-------------Proyectos--------->
+<section id="projects">
   <div class="projects-container-fluid-lg">
     <div class="proyectos container">
       <h2 id="title_section">Proyectos</h2>
+      <button
+        type="button"
+        class="btn btn-success"
+        data-toggle="collapse"
+        data-target
+        routerLink="/newprojects"
+        *ngIf="isLogged"
+      >
+        Agregar
+      </button>
     </div>
-    <table class="table  table-hover">
+    <table class="table table-hover">
       <tbody>
-        <tr *ngFor= "let projects of projects">
-<td>
-<img class="img-juego" [src]="projects.img_proyecto" alt="Aula Juego"></td>
-    <td><b>{{projects.anio}}</b><br>{{projects.herramientas}}<b> <br>{{projects.nombre_proyecto}}</b><br>{{projects.descripcion_proyecto}}
-    </td>
-    
-      <div class="btn-edit"*ngIf="isLogged">
-        <a
-          href="#projects"
-          class="btn"
-          data-bs-toggle="modal"
-          data-bs-target="#projectsModal"
-        >
-          <i class="bi bi-pencil-square"></i>
-        </a>
-      </div>
-    
-      
+        <tr *ngFor="let projects of projects">
+          <td>
+            <img
+              class="img-juego"
+              [src]="projects.img_proyecto"
+              alt="Aula Juego"
+            />
+          </td>
+          <td>
+            <b>{{ projects.anio }}</b
+            ><br />{{ projects.herramientas
+            }}<b> <br />{{ projects.nombre_proyecto }}</b
+            ><br />{{ projects.descripcion_proyecto }}
+          </td>
+
+          <div class="btn-edit" *ngIf="isLogged">
+            <a
+              href="#projects"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#projectsModal"
+            >
+              <i class="bi bi-pencil-square"></i>
+            </a>
+          </div>
+        </tr>
       </tbody>
-                  </table>
-                  <!-- Modal para editar Projects -->
-      <div
+    </table>
+    <!-- Modal para editar Projects -->
+    <div
       class="modal fade"
       id="projectsModal"
       tabindex="-1"
       aria-hidden="true"
-      aria-label="modalTitle"
+      aria-label="projectsModal"
       data-bs-backdrop="static"
     >
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered"
-        role="document"
-      >
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header" >
+          <div class="modal-header">
             <h5 class="modal-title" id="modalprojects">Proyectos</h5>
             <!---x para cerrar-->
             <button
@@ -49,86 +64,127 @@
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
-
           </div>
           <div class="modal-body lg" *ngFor="let projects of projects">
-            <div class="table-responsive">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <th>Nombre del proyecto</th>
-                    </tr>
-                    <tr> <th>
-                      
-                      <input ngModel type="text" ngModel="{{projects.nombre_proyecto}}" placeholder="Nombre del proyecto"  name="nombre"  class="form-control">
-                      
-                    </th></tr>
+            <form (ngSubmit)="updateprojects()" novalidate #form="ngForm">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
                     <tr>
-                    <th>Imagen Proyecto</th>
-                    <th>Año</th>
-                    
-                  </tr>
-                  <tr>
-                   
-                    <th>
-                      
-                      <input ngModel type="text" ngModel="{{projects.img_proyecto}}" placeholder="imagen"  name="imagen"  class="form-control">
-                      
-                    </th>
-                    <th>
-                      
-                      <input ngModel type="text" ngModel="{{projects.anio}}" placeholder="anio"  name="anio"  class="form-control">
-                      
-                    </th>
+                      <th>Nombre del proyecto</th>
                     </tr>
                     <tr>
-                    <th>Herramientas</th>
-                    <th>Descripción del proyecto</th>
+                      <th>
+                        <div class="form-group">
+                          <label for="nombre_proyecto"> nombre del proyecto: </label>
+                        <input
+                          
+                          type="text"
+                          [(ngModel)]="projects.nombre_proyecto"
+                          placeholder="Nombre del proyecto"
+                          name="nombre_proyecto"
+                          class="form-control"
+                          id="nombre_proyecto"
+                          required
+                        />
+                        </div>
+                      </th>
                     </tr>
                     <tr>
-                    <th>
-                      <textarea
-                        type="text"
-                        name="projects"
-                        class="form-control"
-                        ngModel="{{ projects.herramientas}}"
-                        id="herramientas"
-                        placeholder="Herramientas utilizadas"
-                      ></textarea>
-                    </th>
-                    <th>
-                      <textarea
-                        type="text"
-                        name="projects"
-                        class="form-control"
-                        ngModel="{{ projects.descripcion_proyecto}}"
-                        id="descripcion"
-                        placeholder="descripcion del proyecto"
-                      ></textarea>
-                    </th>
-                  </tr>
-                  
-                </tbody>
-              </table>
-            </div>
+                      <th>Imagen Proyecto</th>
+                      <th>Año</th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <div class="form-group">
+                          <label for="imagen_proyecto"> imagen del proyecto: </label>
+                        <input
+                          ngModel
+                          type="text"
+                          [(ngModel)]=" projects.img_proyecto"
+                          placeholder="imagen"
+                          name="imagen_proyecto"
+                          class="form-control"
+                          id="img_proyecto"
+                          required
+                        />
+                        </div>
+                      </th>
+                      <th>
+                        <div class="form-group">
+                          <label for="anio"> años: </label>
+                        <input
+                          ngModel
+                          type="text"
+                          [(ngModel)]="projects.anio"
+                          placeholder="anio"
+                          name="anio"
+                          class="form-control"
+                          id="anio"
+                          required
+                        />
+                        </div>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>Herramientas</th>
+                      <th>Descripción del proyecto</th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <div class="form-group">
+                          <label for="herramientas"> herramientas: </label>
+                        <textarea
+                          type="text"
+                          name="herramientas"
+                          class="form-control"
+                          [(ngModel)]="projects.herramientas"
+                          id="herramientas"
+                          placeholder="Herramientas utilizadas"
+                          required
+                        ></textarea></div>
+                      </th>
+                      <th>
+                        <div class="form-group">
+                          <label for="descripcion_proyecto"> descripcion del proyecto: </label>
+                        <textarea
+                          type="text"
+                          name="descripcion_proyecto"
+                          class="form-control"
+                          [(ngModel)]=" projects.descripcion_proyecto"
+                          id="descripcion_proyecto"
+                          placeholder="descripcion del proyecto"
+                          required
+                        ></textarea>
+                        </div>
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-            <div class="modal-footer">
-              <button                
-                class="btn btn-primary">    
-                Guardar Cambios
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Eliminar
-              </button>
-            </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  [disabled]="!form.valid"
+                  class="btn btn-success"
+                  data-bs-dismiss="modal"
+                >
+                  Actualizar
+                </button>
+                <button
+                  type="button"
+                  (click)="deleteprojects(projects.id!)"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Eliminar
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-

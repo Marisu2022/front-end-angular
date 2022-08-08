@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable}from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { About } from '../models/about';
 import { Experience } from '../models/experience';
 import { Header } from '../models/header';
@@ -17,7 +18,7 @@ import { Skill } from '../models/skill';
 })
 export class PortfolioService {
   //dirección de la api o endpoint del backend
-  backendUrl:String= 'http://localhost:8080/';
+  private backendUrl: String = environment.apiBaseUrl;
 
 
   constructor(
@@ -35,12 +36,6 @@ export class PortfolioService {
   public getheader():Observable<Header[]>{
     return this.httpClient.get<Header[]>(`${this.backendUrl}ver/header`);
   }
- 
- 
-
-
-
-
   public getportada():Observable<Portada[]>{
     return this.httpClient.get<[Portada]>(`${this.backendUrl}ver/portada`);
 }
@@ -50,43 +45,35 @@ public getprojects():Observable<Projects[]>{
   
 
   //Crear nuevos datos en el porfolio
-
-
-  
  
   
   public postnewheader(header:Header):Observable<any>{
     return this.httpClient.post<any>(`${this.backendUrl}new/header`, header);
   }
   
-  
-  
- 
+   
   public postnewportada(portada:Portada):Observable<any>{
     return this.httpClient.post<any>(`${this.backendUrl}new/portada`, portada);
   }
   public postnewprojects(projects:Projects):Observable<any>{
-    return this.httpClient.post<any>(`${this.backendUrl}new/projects`, projects);
+    return this.httpClient.post<any>(`${this.backendUrl}new/project`, projects);
   }
   
   //Traer datos del porfolio
   public detallepersona(id: number): Observable<any>{
-    return this.httpClient.get<any>(`${this.backendUrl}detallepersona/${id}`);
+    return this.httpClient.get<any>(`${this.backendUrl}detail/${id}`);
   }
-  
- 
- 
-  
+    
   
   public detalleheader(id: number): Observable<any>{
-    return this.httpClient.get<any>(`${this.backendUrl}detalleheader/${id}`);
+    return this.httpClient.get<any>(`${this.backendUrl}detail/${id}`);
   }
 
   public detalleportada(id: number): Observable<any>{
-    return this.httpClient.get<any>(`${this.backendUrl}detalleportada/${id}`);
+    return this.httpClient.get<any>(`${this.backendUrl}detail/${id}`);
   }
   public detalleprojecs(id: number): Observable<any>{
-    return this.httpClient.get<any>(`${this.backendUrl}detalleprojects/${id}`);
+    return this.httpClient.get<any>(`${this.backendUrl}detail/${id}`);
   }
  
 
@@ -108,7 +95,7 @@ public updateportada(id:number,portada: Portada):Observable<any>{
   return this.httpClient.put<any>(`${this.backendUrl}editar/portada/${id}`,portada);
 }
 public updateprojects(id:number,projects: Projects):Observable<any>{
-  return this.httpClient.put<any>(`${this.backendUrl}editar/projects/${id}`,projects);
+  return this.httpClient.put<any>(`${this.backendUrl}editar/project/${id}`,projects);
 }
 
 
@@ -116,21 +103,21 @@ public updateprojects(id:number,projects: Projects):Observable<any>{
 //Borrar datos del porfolio
 
 public deletepersona(id:number):Observable<any>{
-  return this.httpClient.delete<any>(`${this.backendUrl}delete/${id}`);
+  return this.httpClient.delete<any>(`${this.backendUrl}delete/persona${id}`);
 }
 
 
 
 
 public deleteheader(id:number):Observable<any>{
-  return this.httpClient.delete<any>(`${this.backendUrl}delete/${id}`);
+  return this.httpClient.delete<any>(`${this.backendUrl}delete/header${id}`);
 }
 
 public deleteportada(id:number):Observable<any>{
-  return this.httpClient.delete<any>(`${this.backendUrl}delete/${id}`);
+  return this.httpClient.delete<any>(`${this.backendUrl}delete/portada${id}`);
 }
 public deleteprojects(id:number):Observable<any>{
-  return this.httpClient.delete<any>(`${this.backendUrl}delete/${id}`);
+  return this.httpClient.delete<any>(`${this.backendUrl}delete/project${id}`);
 }
 
 }

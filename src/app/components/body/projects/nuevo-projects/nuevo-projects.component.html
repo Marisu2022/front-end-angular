@@ -1,0 +1,32 @@
+<div class="container-mt-3 m-2 p-2 ">
+    <h3 class="m-4 p-4">Agregar Proyecto</h3>
+    <div class="row">
+        <div class="col-md8- mx-auto-8">
+             <form (ngSubmit)="postNewProjects()"novalidate #f="ngForm">
+                                                   
+                <div class="form-group">
+                    <label for="img"> imagen del proyecto: </label>
+                    <input type="text" class="form-control" id="img_proyecto" name="img_proyecto" placeholder="img_proyecto"
+                    [(ngModel)]="img_proyecto">
+            </div>
+            <div class="form-group">
+                    <label for="anio"> Año: </label>
+                    <input type="text" class="form-control" id="anio" name="anio" placeholder="Año"
+                    [(ngModel)]= "anio" required>
+                </div>
+                <div class="form-group">
+                    <label for="herramientas"> Herramientas: </label>
+                    <input type="text" class="form-control" id="herramientas" name="herramientas" placeholder="Herramientas" 
+                    [(ngModel)]= "herramientas" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre_proyecto"> Nombre del proyecto: </label>
+                    <input type="text" class="form-control" id="nombre_proyecto" name="nombre_proyecto" placeholder="nombre_proyecto"
+                    [(ngModel)]= "anio" required>
+                </div>
+                
+                <button class="btn btn-warning btn-block m-2" [disabled]="!f.valid" >Agregar</button>
+                <button class="btn btn-success btn-block m-2" routerLink="/portfolio">Finalizar</button>
+             </form>
+        </div>
+    </div>
