@@ -11,17 +11,21 @@ import { AboutService } from 'src/app/servicios/about.service';
   
 })
 export class AboutComponent implements OnInit {
- public about:About[]=[];
- aboutMe!:string;
+ about:About[]=[];
+
   id!: number;
-  roles!: string[];
-isLogged = false;
-isAdmin = false
+  about_me:string='';
   toastr: any;
+  roles!: string[];
+  isLogged = false;
+  isAdmin = false
+   activatedRoute: any;
  
    constructor(
     //inyectamos el servicio que importamos
-    private aboutService:AboutService,private tokenService: TokenService,private router:Router
+    private aboutService:AboutService,
+    private tokenService: TokenService,
+    private router:Router
    ) 
    { }
 
@@ -40,13 +44,13 @@ this.getAbout();
 
 }
 //método para cargar about
-private getAbout(){
+private getAbout():void{
 this.aboutService.getabout().subscribe(
 (data:About[])=>{
   this.about = data;
   
 }
-) 
+);
 }
 deleteabout(id?:number){
   if(id !=undefined){
@@ -54,38 +58,41 @@ deleteabout(id?:number){
   data=>{
     this.getAbout();
   
-  },err=>{
+  },
+  (err)=>{
     alert(" No se logró eliminar")
   }
-    )
+    );
 }}
 postnewabout(): void {
-  const about= new About(this.aboutMe);
+  const about= new About(this.about_me);
   this.aboutService.postnewabout(about).subscribe(data=>{
-    this.toastr.success('Educacion creado','OK',{
-      timeOut: 3000, positionClass:'toast-top-center'
+    this.toastr.success('About creado','OK',{
+      timeOut: 3000, positionClass:'toast-top-center',
     });
    this.router.navigate(['/']);
   },
-  err=>{
+  (err)=>{
     this.toastr.error('Error al crear nuevo texto acerca de mí', 'Fail',{
-      timeOut:3000, positionClass:'toast-top-center'
+      timeOut:3000, 
+      positionClass:'toast-top-center',
     });
     this.router.navigate(['/']);
-  }
-);                        
+  },
+  
+);
 }
 
 updateabout(): void {
 //const id = this.activatedRoute.snapshot.params['id'];
-const about = new About(this.aboutMe);
+const about = new About(this.about_me);
   this.aboutService.updateabout(this.id,about).subscribe(data=>{
 this.toastr.success('Acerca de mí Actualizado', 'OK', {
   timeOut: 3000, positionClass: 'toast-top-center'
 });
 this.router.navigate(['/']);
 },
-err => {
+(err) => {
 this.toastr.error(err.error.mensaje, 'Fail', {
   timeOut: 3000,  positionClass: 'toast-top-center',
 });

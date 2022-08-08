@@ -39,6 +39,8 @@ import { ExperienceComponent } from './components/body/experience/experience.com
 import { OthersComponent } from './components/body/others/others.component';
 import { EducationComponent } from './components/body/education/education.component';
 import { ProjectsComponent } from './components/body/projects/projects.component';
+import { NuevoExperienceComponent } from './components/body/experience/nuevo-experience/nuevo-experience.component';
+import { NuevoOthersComponent } from './components/body/others/nuevo-others/nuevo-others.component';
 
 
 
@@ -74,7 +76,9 @@ import { ProjectsComponent } from './components/body/projects/projects.component
     NuevoSkillComponent,
     NuevoHeaderComponent,
     ExperienceComponent,
-    OthersComponent
+    OthersComponent,
+    NuevoExperienceComponent,
+    NuevoOthersComponent
 
 
 ],

@@ -12,19 +12,19 @@ private backendUrl:String = environment.apiBaseUrl;
 
 constructor(private httpClient: HttpClient) { }
 
-public getCourses():Observable<Courses[]>{
+public getcourses():Observable<Courses[]>{
     return this.httpClient.get<Courses[]>(`${this.backendUrl}ver/courses`);
 }
-public postNewCourses(courses:Courses[]):Observable<any>{
+public postnewcourses(courses:Courses):Observable<any>{
   return this.httpClient.post<any>(`${this.backendUrl}new/courses`, courses);
 }
-public detalleCourses(id: number): Observable<any>{
-  return this.httpClient.get<any>(`${this.backendUrl}detallecourses/${id}`);
+public detallecourses(id: number): Observable<any>{
+  return this.httpClient.get<any>(`${this.backendUrl}detail/${id}`);
 }
-public updateCourses(courses: Courses):Observable<Courses>{
-  return this.httpClient.put<Courses>(`${this.backendUrl}editar/courses`, courses);
+public updatecourses(id:number,courses: Courses):Observable<Courses>{
+  return this.httpClient.put<Courses>(`${this.backendUrl}editar/courses/${id}`, courses);
 }
-public deleteCourses(id:number):Observable<void>{
+public deletecourses(id:number):Observable<any>{
   return this.httpClient.delete<void>(`${this.backendUrl}delete/courses/${id}`);
 }
 }

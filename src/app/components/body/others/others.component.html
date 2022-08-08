@@ -2,8 +2,19 @@
     <div class="others container mt-3">
         <div class="card nat-card">
     <h5 class="text-center">Otros recorridos realizados</h5>
-    
+    </div>
+    <button
+    type="button"
+    class="btn btn-success"
+    data-toggle="collapse"
+    data-target
+    routerLink="/newothers"
+    *ngIf="isLogged"
+  >
+    Agregar
+  </button>
     <div class="others container mt-3">
+      
     <table table table-borderless>
     <tbody>  
       
@@ -12,10 +23,13 @@
           <td>
           <div class="btn-group">
             <div class="btn-edit"*ngIf="isLogged">
-              <a href="#others" target="_blank"class="btn"data-bs-toggle="modal"
-              data-bs-target="#othersModal">
-              <i class="bi bi-pencil-square"></i>
-              </a>
+              <button
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#othersModal"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
             </div></div></td>
 
         </tr>
@@ -61,6 +75,7 @@
             ></button>
           </div>
           <div class="modal-body lg" *ngFor="let others of others">
+            <form (ngSubmit)="updateothers()" novalidate #form="ngForm">
             <div class="table-responsive">
               <table class="table">
                 <tbody>
@@ -70,14 +85,17 @@
                   </tr>
                   <tr>
                     <th>
-                      <textarea
-                        type="text"
-                        name="others"
-                        class="form-control"
-                        ngModel="{{others.item}}"
-                        id="name"
-                        placeholder="Recorrido"
-                      ></textarea>
+                      <div class="form-group">
+                        <label for="item">Acerca de mi:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="item"
+                          name="item"
+                          [(ngModel)]="others.item"
+                          required
+                        />
+                      </div>
                     </th>
                   </tr>
                 </tbody>
@@ -85,23 +103,27 @@
             </div>
 
             <div class="modal-footer">
-              <button                
-                class="btn btn-primary">    
-                Guardar Cambios
+              <button
+                type="button"
+                [disabled]="!form.valid"
+                class="btn btn-success"
+                data-bs-dismiss="modal"
+              >
+                Actualizar
               </button>
               <button
                 type="button"
-                class="btn btn-secondary"
+                (click)="deleteothers(others.id!)"
+                class="btn btn-danger"
                 data-bs-dismiss="modal"
               >
                 Eliminar
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
-
-</div>
-</div>
+  </div>
+</div></div>
 

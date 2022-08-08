@@ -2,6 +2,16 @@
 <div class="courses-container-fluid-lg"id="courses-container">
   <div class="courses container mt-3"id="courses">
     <h5 class="text-center">Algunos cursos realizados</h5>
+    <button
+    type="button"
+    class="btn btn-success"
+    data-toggle="collapse"
+    data-target
+    routerLink="/newcourses"
+    *ngIf="isLogged"
+  >
+    Agregar
+  </button>
   </div>
   <div class="card nat-card">
   <div class="container mt-3">
@@ -15,16 +25,16 @@
             <p>{{ courses.curso }}</p>
           </td>
         <td>
+          <div class="btn-group">
             <div class="btn-edit"*ngIf="isLogged">
-              <a
-                href="#courses"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#coursesModal"
-              >
-                <i class="bi bi-pencil-square"></i>
-              </a>
-            </div>
+              <button
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#coursesModal"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+            </div></div>
         </td>
             </tr>
            
@@ -37,10 +47,10 @@
  <!-- Modal para editar Courses -->
  <div
  class="modal fade"
- id="CoursesModal"
+ id="coursesModal"
  tabindex="-1"
  aria-hidden="true"
- aria-label="coursesModal"
+ aria-label="modalTitle"
  data-bs-backdrop="static"
 >
  <div
@@ -59,47 +69,55 @@
        ></button>
      </div>
      <div class="modal-body lg" *ngFor="let courses of courses">
-                  
-            <form #updateForm="ngForm">
-              <div class="form-group">
-              <label for="nombre">Curso</label><br>
-              <input  type="text" ngModel="{{courses?.curso}} " name="curso"  class="form-control">
-        </div></form>
-       
+      <form (ngSubmit)="updatecourses()" novalidate #form="ngForm">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Curso</th>
+          
+              </tr>
+              <tr>
+                <th>
+                  <div class="form-group">
+                    <label for="curso">Curso:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="curso"
+                      name="curso"
+                      [(ngModel)]="courses.curso"
+                      required
+                    />
+                  </div>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-       <div class="modal-footer">
-        <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button (click)="onUpdateCourses(updateForm.value)" class="btn btn-primary">Guardar cambios</button>
-      </div></div>
-
-        
-       </div>
-       <!-- Modal Eliminar -->
-
-<div class="modal fade"
-id="deleteCoursesModal" 
-tabindex="-1"
- aria-hidden="true"
- aria-labelledy="deleteCourses"
- 
->
-  <div class="modal-dialogmodal-lg modal-dialog-centered"role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="deleteCourses">Eliminar Curso</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <div class="modal-body lg">
-              <p>Esta acción eliminará el curso" ¿Desea continuar?</p>
-          </div>
-          <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-          </div><div>
-          <button type="button" class="btn" data-dismiss="modal">Sí</button>
-          </div>
-      </div>
-  </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            [disabled]="!form.valid"
+            class="btn btn-success"
+            data-bs-dismiss="modal"
+          >
+            Actualizar
+          </button>
+          <button
+            type="button"
+            (click)="deletecourses(courses.id!)"
+            class="btn btn-danger"
+            data-bs-dismiss="modal"
+          >
+            Eliminar
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+</div>
+</div></div>
+

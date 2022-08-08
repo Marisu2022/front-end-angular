@@ -1,6 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Courses } from 'src/app/models/courses';
 import { CoursesService } from 'src/app/servicios/courses.service';
@@ -15,20 +13,23 @@ import { TokenService } from 'src/app/servicios/token.service';
   
 })
 export class CoursesComponent implements OnInit {
-  public courses:Courses[]=[];
-  public updateCourses: Courses | undefined;
-  public deleteCourses: Courses | undefined;
-  isLogged= false;
+  courses:Courses[]=[];
+  id!: number;
+  curso:string='';
+  toastr: any;
   roles!: string[];
-  isAdmin= false
+  isLogged = false;
+  isAdmin = false
+   activatedRoute: any;
 
 
 
   constructor(private coursesService: CoursesService,private tokenService: TokenService,
     private router:Router) { }
 
-    ngOnInit() {
-      this.coursesService.getCourses()
+    ngOnInit():void {
+      this.getCourses()
+
       if(this.tokenService.getToken()){
         this.isLogged = true;
          }else{
@@ -37,87 +38,61 @@ export class CoursesComponent implements OnInit {
      this.getCourses();
     
     
-  }
-  public getCourses():void {
-    this.coursesService.getCourses().subscribe(
-      (response:Courses[])=>{
-        this.courses = response;
-        console.log(this.courses);
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
+  }//método para cargar cursos
+  public getCourses():void{
+    this.coursesService.getcourses().subscribe(
+      (data:Courses[])=>{
+        this.courses = data;
+       
       }
-    );
-  }
-  
-
-  
-    public onPostNewCourses(postNewForm: NgForm):void {
-      document.getElementById('postNew-courses-modal')?.click();
-      this.coursesService.postNewCourses(postNewForm.value).subscribe(
-        (response: Courses) => {
-          console.log(response);
-          this.getCourses();
-          postNewForm.reset();
-        },
-        (error: HttpErrorResponse) => {
-          alert(error.message);
-          postNewForm.reset();
-        }
-      );
+    );}
+    deletecourses(id?:number){
+      if(id !=undefined){
+        this.coursesService.deletecourses(id).subscribe(
+      data=>{
+        this.getCourses();
       
-    }
-  
-    public onUpdateCourses(courses:Courses):void {
-      this.coursesService.updateCourses(courses).subscribe(
-      (response: Courses) => {
-        console.log();
-        this.getCourses();
-        
       },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
+      (err)=>{
+        alert(" No se logró eliminar")
       }
-    )
-    
-  }
-  
-    public onDeleteCourses(id:number):void {
-      this.coursesService.deleteCourses(id).subscribe(
-      (response: void) => {
-        console.log(response);
-        this.getCourses();
-        
+        );
+    }}
+    postnewcourses(): void {
+      const courses = new Courses(this.curso);
+      this.coursesService.postnewcourses(courses).subscribe(data=>{
+        this.toastr.success('Curso creado','OK',{
+          timeOut: 3000, positionClass:'toast-top-center',
+        });
+       this.router.navigate(['/']);
       },
-      (error: HttpErrorResponse) => {
-        console.log(error.message);
-      }
+      (err)=>{
+        this.toastr.error('Error al crear nuevo texto acerca de mí', 'Fail',{
+          timeOut:3000, 
+          positionClass:'toast-top-center',
+        });
+        this.router.navigate(['/']);
+      },
+      
     );
+    }
     
-  }
-  public onOpenModal(courses: Courses, mode: string): void{
-    const container = document.getElementById('courses-container');
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.style.display = 'none';
-    button.setAttribute('data-bs-toggle', 'modal');
-    if (mode === 'postNew') {
-      button.setAttribute('data-target', '#postNewCoursesModal');
+    updatecourses(): void {
+    //const id = this.activatedRoute.snapshot.params['id'];
+    const courses = new Courses(this.curso);
+      this.coursesService.updatecourses(this.id,courses).subscribe(data=>{
+    this.toastr.success('Curso Actualizado', 'OK', {
+      timeOut: 3000, positionClass: 'toast-top-center'
+    });
+    this.router.navigate(['/']);
+    },
+    (err) => {
+    this.toastr.error(err.error.mensaje, 'Fail', {
+      timeOut: 3000,  positionClass: 'toast-top-center',
+    });
+    this.router.navigate(['/']);
     }
-    if (mode === 'update') {
-      this.updateCourses = courses;
-      button.setAttribute('data-target', '#updateCuorsesModal');
+    );
     }
-    if (mode === 'delete') {
-      this.deleteCourses = courses;
-      button.setAttribute('data-target', '#deleteCoursesModal');
-    }
-    container?.appendChild(button);
-    button.click();
-  }
-  
-  }
-
-
-  
-  
+    
+}

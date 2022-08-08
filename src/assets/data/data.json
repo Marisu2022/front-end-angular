@@ -5,7 +5,7 @@
   "img_profile": "assets/imagenes/portada3.png",
  
  "about": [
-  {"aboutMe": "Mi trayectoria laboral inicia hace treinta años y conjuga el desarrollo de proyectos creativos mediados por TIC, la docencia y la gestión de diversas áreas de gobierno a nivel municipal y provincial. Incorporé el estudio y la puesta en marcha de nuevas tecnologías en cada desafío, buscando brindar un servicio de vanguardia. Considero primordiales el trabajo colaborativo y la planificación estratégica de todo proceso creativo. Actualmente jubilada, busco formar parte de nuevos proyectos innovadores y de impacto social."}],
+  {"about": "Mi trayectoria laboral inicia hace treinta años y conjuga el desarrollo de proyectos creativos mediados por TIC, la docencia y la gestión de diversas áreas de gobierno a nivel municipal y provincial. Incorporé el estudio y la puesta en marcha de nuevas tecnologías en cada desafío, buscando brindar un servicio de vanguardia. Considero primordiales el trabajo colaborativo y la planificación estratégica de todo proceso creativo. Actualmente jubilada, busco formar parte de nuevos proyectos innovadores y de impacto social."}],
   "header": [
     {
       "img": "https://img.icons8.com/material-outlined/32/000000/github.png",
@@ -134,8 +134,7 @@
       "curso": " 'Introducción a la programación en Android con Java' -  UTN.BA"
     },
     {
-      
-      "curso": " 'Liderazgo Político y Social'- Universidad Católica Argentina"
+     "curso": " 'Introducción a la programación en Android con Java' -  UTN.BA"
     }
   ],
   "projects": [
@@ -163,31 +162,34 @@
     } 
     
   ],
+  "skills": [
+    { 
 
-  "percent_circle1": 90,
-  "text_circle1": "Trabajo Colaborativo",
-  "percent_circle2": 85,
-  "text_circle2": "Planificación Estratégica",
-  "percent_circle3": 80,
-  "text_circle3": "Gestión de Conflictos",
-  "percent_circle4": 80,
-  "text_circle4": "Creatividad",
+  "percent_circle": 90,
+  "text_circle": "Trabajo Colaborativo"},{ 
+  "percent_circle": 85,
+  "text_circle": "Planificación Estratégica"},{ 
+  "percent_circle": 80,
+  "text_circle": "Gestión de Conflictos"},{ 
+  "percent_circle": 80,
+  "text_circle": "Creatividad"},{ 
 
-  "percent_circle5": 85,
-  "text_circle5": "HTML",
-  "percent_circle6": 75,
-  "text_circle6": "CSS",
-  "percent_circle7": 80,
-  "text_circle7": "FIGMA",
-  "percent_circle8": 60,
-  "text_circle8": "Angular",
+  "percent_circle": 85,
+  "text_circle": "HTML"},{ 
+  "percent_circle": 75,
+  "text_circle": "CSS"},{ 
+  "percent_circle": 80,
+  "text_circle": "FIGMA"},{ 
+  "percent_circle": 60,
+  "text_circle": "Angular"},{ 
 
-  "percent_circle9": 60,
-  "text_circle9": "GIT GITHUB",
-  "percent_circle10": 45,
-  "text_circle10": "JavaScript",
-  "percent_circle11": 55,
-  "text_circle11": "JAVA",
-  "percent_circle12": 50,
-  "text_circle12": "SpringBoot"
+  "percent_circle": 60,
+  "text_circle": "GIT GITHUB"},{ 
+  "percent_circle": 45,
+  "text_circle": "JavaScript"},{ 
+  "percent_circle": 55,
+  "text_circle": "JAVA"},{ 
+  "percent_circle": 50,
+  "text_circle": "SpringBoot"
 }
+]}

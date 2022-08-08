@@ -24,35 +24,4 @@ isAdmin = false
     private router: Router) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.getDatos().subscribe(data=>{
-      this.miPortfolio = data;
-    });
-
-  this.getdatos();
-
-  if(this.tokenService.getToken()){
-    this.isLogged = true;
-    return console.log(`${this.isLogged} + estas logeado`)
-  }else{
-    this.isLogged = false;
-  };
-
-}
-
-   private getdatos(){
-    this.datosPortfolio.getskill().subscribe(
-      (data:Skill[])=>{
-        this.skill = data;
-        console.log(this.skill);
-      }
-    ) 
-   };
-
-  onLogOut():void{
-    this.tokenService.logOut();
-      window.location.reload();
-    this.router.navigate(['/']);
-  };
-
-
-}
+  }}

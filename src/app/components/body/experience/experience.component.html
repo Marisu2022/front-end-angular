@@ -2,9 +2,21 @@
   <div class="experience-container-fluid-lg">
     <div class="experiencia container">
       <h2 id="title_section">Experiencia</h2>
+      <button
+      type="button"
+      class="btn btn-success"
+      data-toggle="collapse"
+      data-target
+      routerLink="/newexperience"
+      *ngIf="isLogged"
+    >
+      Agregar
+    </button>
     </div>
+   
     <div class="experience container mt-3">
       <div class="card nat-card">
+       
         <table class="table table-striped">
           <tbody id="experience-table">
             <tr *ngFor="let experience of experience">
@@ -18,21 +30,21 @@
               botones irán uno al lado del otro
               ---->
                 <div class="btn-group">
-                  <div class="btn-edit"*ngIf="isLogged">
-                    <a
-                      href="#experience"
-                      class="btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#experienceModal"
-                    >
-                      <i class="bi bi-pencil-square"></i>
-                    </a>
+                  <div class="btn-edit" *ngIf="isLogged">
+                    <button
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#experienceModal"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
                   </div>
                 </div>
-              </td>
+              
             </tr>
           </tbody>
         </table>
+        </div>
         <!---------fuente del ícono----
           <i class="bi bi-pencil-square"></i>
           este es el div que contiene el boton editar, al usar group los 
@@ -44,14 +56,14 @@
                 <i class="bi bi-trash"></i>
           
             </div>-->
-      </div>
+      
       <!-- Modal para editar Experiencia -->
       <div
         class="modal fade"
         id="experienceModal"
         tabindex="-1"
         aria-hidden="true"
-        aria-label="modalTitle"
+        aria-label="experienceModal"
         data-bs-backdrop="static"
       >
         <div
@@ -59,7 +71,7 @@
           role="document"
         >
           <div class="modal-content">
-            <div class="modal-header" >
+            <div class="modal-header">
               <h5 class="modal-title" id="modalExperience">Experiencia</h5>
               <!---x para cerrar-->
               <button
@@ -70,6 +82,7 @@
               ></button>
             </div>
             <div class="modal-body lg" *ngFor="let experience of experience">
+              <form (ngSubmit)="updateexperience()" novalidate #form="ngForm">
               <div class="table-responsive">
                 <table class="table">
                   <tbody>
@@ -79,42 +92,58 @@
                     </tr>
                     <tr>
                       <th>
-                        
-                        <input ngModel type="text" ngModel="{{experience.periodo}}" placeholder="periodo"  name="periodo"  class="form-control">
-                        
+                        <div class="form-group">
+                          <label for="periodo"> período: </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="periodo"
+                            name="periodo"
+                            [(ngModel)]="experience.periodo"
+                            required
+                          />
+                        </div>
                       </th>
                       <th>
-                        <textarea
-                          type="text"
-                          name="experience"
-                          class="form-control"
-                          ngModel=""
-                          id="name"
-                          placeholder="Descripción de la experiencia"
-                        ></textarea>
+                        <div class="form-group">
+                          <label for="descripcion"> descripción de la experiencia: </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="descripcion"
+                            name="descripcion"
+                            [(ngModel)]="experience.descripcion"
+                            required
+                          />
+                        </div>
                       </th>
-                    </tr>
+                       </tr>
                   </tbody>
                 </table>
               </div>
 
               <div class="modal-footer">
-                <button                
-                  class="btn btn-primary">    
-                  Guardar Cambios
-                </button>
                 <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
+                type="button"
+                [disabled]="!form.valid"
+                class="btn btn-success"
+                data-bs-dismiss="modal">
+                Actualizar
+            </button>
+            <button
+            type="button"
+            (click)="deleteexperience(experience.id!)"
+            class="btn btn-danger"
+            data-bs-dismiss="modal"
+          >
                   Eliminar
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+    </div>
+    </section>

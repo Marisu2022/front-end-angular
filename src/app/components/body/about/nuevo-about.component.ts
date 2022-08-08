@@ -10,15 +10,14 @@ import { AboutService } from 'src/app/servicios/about.service';
 })
 export class NuevoAboutComponent implements OnInit {
   id?: number;
-  aboutMe:string='';
-  
+  about_me:string='';
   toastr: any;
   constructor(private aboutService:AboutService,private router: Router) { }
 
   ngOnInit(): void {
   }
   postNewAbout(): void {
-    const about = new About(this.aboutMe);
+    const about = new About(this.about_me);
     this.aboutService.postnewabout(about).subscribe(data=>{
       this.toastr.success('About creado','OK',{
         timeOut: 3000, positionClass:'toast-top-center'

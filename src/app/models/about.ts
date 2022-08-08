@@ -1,10 +1,9 @@
 export class About {
     id?:number;
-
-    aboutMe: string;
+    about_me: string;
     
-    constructor(aboutMe: string){
-        this.aboutMe = aboutMe;
+    constructor(about_me: string){
+        this.about_me = about_me;
        
     }
 }

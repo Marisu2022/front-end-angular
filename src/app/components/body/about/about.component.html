@@ -2,132 +2,123 @@
   <div class="about-container-fluid-lg">
     <div class="about-container">
       <h2 id="title_section">Sobre mi</h2>
-</div>
-      <div class="card nat-card">
-        <button
-          type="button"
-          class="btn btn-success"
-          data-toggle="collapse"
-          data-target
-          routerLink="/newabout"
-          *ngIf="isLogged"
-        >
-          Agregar
-        </button>
-        <div class="container mt-3">
-          <table class="table table-hover">
-            <tbody>
-              <tr *ngFor="let about of about">
-                <td><p>{{ about.aboutMe }}</p></td>
-       
+      <button
+      type="button"
+      class="btn btn-success"
+      data-toggle="collapse"
+      data-target
+      routerLink="/newabout"
+      *ngIf="isLogged"
+    >
+      Agregar
+    </button>
+    </div>
+    <div class="card nat-card">
+     
+      <div class="container mt-3">
+        <table class="table table-hover">
+          <tbody>
+            <tr *ngFor="let about of about">
+              <td>
+                <p>{{ about.about_me }}</p>
+              </td>
 
-        <!---div oculto que aparece para editar------
-      <div>
-        
-        <input id="edit-about" placeholder="Sobre mi" type="text"
-        oninput="myFunction3(this.value)"
-      style="display:none">
-    </div>-->
-        <!---------fuente del ícono----
-  <i class="bi bi-pencil-square"></i>
-  este es el div que contiene el boton editar, al usar group los 
-  botones irán uno al lado del otro
-  ---->
-        <div class="btn-group">
-          <div class="btn-edit" *ngIf="isLogged">
-            <button
+                <div class="btn-group">
+                <div class="btn-edit" *ngIf="isLogged">
+                  <button
                     class="btn"
                     data-bs-toggle="modal"
                     data-bs-target="#aboutModal"
                   >
                     <i class="bi bi-pencil-square"></i>
                   </button>
-          </div></div></tr></tbody></table></div>
-          <!----------este es el div que contiene el botón eliminar  ----
+                </div>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!----------este es el div que contiene el botón eliminar  ----
           <div class="btn_trash" onclick="eliminar_about()">
             <a href="#about" class="btn">
               <i class="bi bi-trash"></i>
             </a>
           </div>-->
-          <!---modal de about-->
+      <!---modal de about-->
 
-          <div
-            class="modal fade"
-            id="aboutModal"
-            tabindex="-1"
-            aria-hidden="true"
-            aria-label="modalAbout"
-            data-bs-backdrop="static"
-          >
-            <div
-              class="modal-dialog modal-lg modal-dialog-centered"
-              role="document"
-            >
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modalTitleAbout" id="modalTitleAbout">Sobre Mi</h5>
-                  <!---x para cerrar-->
+      <div
+        class="modal fade"
+        id="aboutModal"
+        tabindex="-1"
+        aria-hidden="true"
+        aria-label="abotModal"
+        data-bs-backdrop="static"
+      >
+        <div
+          class="modal-dialog modal-lg modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalAbout">Sobre Mi</h5>
+              <!---x para cerrar-->
+              <button
+                Type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body lg" *ngFor="let about of about">
+              <form (ngSubmit)="updateabout()" novalidate #form="ngForm">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <th>Acerca de mí</th>
+                      </tr>
+                      <tr>
+                        <th>
+                          <div class="form-group">
+                            <label for="about_me">Acerca de mi:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="about_me"
+                              name="about_me"
+                              [(ngModel)]="about.about_me"
+                              required
+                            />
+                          </div>
+                        </th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="modal-footer">
                   <button
-                    Type="button"
-                    class="btn-close"
+                    type="button"
+                    [disabled]="!form.valid"
+                    class="btn btn-success"
                     data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
+                  >
+                    Actualizar
+                  </button>
+                  <button
+                    type="button"
+                    (click)="deleteabout(about.id!)"
+                    class="btn btn-danger"
+                    data-bs-dismiss="modal"
+                  >
+                    Eliminar
+                  </button>
                 </div>
-                <div class="modal-body lg"*ngFor="let about of about">
-                  <form (ngSubmit)="updateabout()" novalidate #form="ngForm">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <th>Acerca de mí</th>
-                  
-                          </tr>
-                          <tr>
-                            <th>
-                              <div class="form-group">
-                                <label for="about">Acerca de mi:</label>
-                                <input
-                                  type
-                                  type="text"
-                                  class="form-control"
-                                  id="about"
-                                  name="about"
-                                  [(ngModel)]="about.aboutMe"
-                                  required
-                                />
-                              </div>
-                            </th>
-                            <th>
-                               </tr>
-                        </tbody>
-                      </table>
-                    </div>
-    
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        [disabled]="!form.valid"
-                        class="btn btn-success"
-                        data-bs-dismiss="modal"
-                      >
-                        Actualizar
-                      </button>
-                      <button
-                        type="button"
-                        (click)="deleteabout(about.id!)"
-                        class="btn btn-danger"
-                        data-bs-dismiss="modal"
-                      >
-                        Eliminar
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    
+    </div>
+  </div>
+</section>
