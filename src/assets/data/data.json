@@ -162,34 +162,33 @@
     } 
     
   ],
-  "skills": [
-    { 
-
-  "percent_circle": 90,
+  "skill":[
+    {   
+  "percent": 90,
   "text_circle": "Trabajo Colaborativo"},{ 
-  "percent_circle": 85,
-  "text_circle": "Planificación Estratégica"},{ 
-  "percent_circle": 80,
-  "text_circle": "Gestión de Conflictos"},{ 
-  "percent_circle": 80,
-  "text_circle": "Creatividad"},{ 
+  "percent": 85,
+  "text_circle": "Planificación Estratégica"},{
+  "percent": 80,
+  "text_circle": "Gestión de Conflictos"},{
+  "percent": 80,
+  "text_circle": "Creatividad"},{
 
-  "percent_circle": 85,
-  "text_circle": "HTML"},{ 
-  "percent_circle": 75,
-  "text_circle": "CSS"},{ 
-  "percent_circle": 80,
-  "text_circle": "FIGMA"},{ 
-  "percent_circle": 60,
-  "text_circle": "Angular"},{ 
+  "percent": 85,
+  "text_circle5": "HTML"},{
+  "percent": 75,
+  "text_circle": "CSS"},{
+  "percent": 80,
+  "text_circle": "FIGMA"},{
+  "percent": 60,
+  "text_circle": "Angular"},{
 
-  "percent_circle": 60,
-  "text_circle": "GIT GITHUB"},{ 
-  "percent_circle": 45,
-  "text_circle": "JavaScript"},{ 
-  "percent_circle": 55,
-  "text_circle": "JAVA"},{ 
-  "percent_circle": 50,
+  "percent": 60,
+  "text_circle": "GIT GITHUB"},{
+  "percent": 45,
+  "text_circle": "JavaScript"},{
+  "percent": 55,
+  "text_circle": "JAVA"},{
+  "percent": 50,
   "text_circle": "SpringBoot"
 }
 ]}

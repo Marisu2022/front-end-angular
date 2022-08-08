@@ -1,12 +1,12 @@
 export class Skill {
     id?: number;
     text_circle: string;
-    percent_circle: string;
+    percent: string;
     
     
 
-    constructor(text_circle: string, percent_circle:string){
+    constructor(text_circle: string, percent:string){
     this.text_circle = text_circle;
-            this.percent_circle= percent_circle;
+            this.percent= percent;
 }
 }

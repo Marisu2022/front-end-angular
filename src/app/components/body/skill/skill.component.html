@@ -1,0 +1,155 @@
+
+   <!------------------------ Habilidades ----------------------->
+      <section id="skill">
+        <div class="skills-container-fluid-lg">
+          <div class="habilidades container">
+          <h2 id="title_section">Habilidades</h2>
+          <button
+          type="button"
+          class="btn btn-success"
+          data-toggle="collapse"
+          data-target
+          routerLink="/newskill"
+          *ngIf="isLogged"
+        >
+          Agregar
+        </button>
+        </div>
+        <div class="skill container mt-3">
+          <div class="card nat-card">
+          
+          <table class="table  table-hover">
+            <tbody>
+              <div *ngFor="let skill of skill">
+                      
+            <div class="box">
+              
+              <h3>{{ skill.text_circle }}</h3>
+
+              <div class="percent" >
+                <circle-progress
+               
+                [percent]="80"
+                    [radius]="80"
+                    [outerStrokeWidth]="12"
+                    [innerStrokeWidth]="4"
+                    [outerStrokeColor]="'#03a9f4'"
+                    [innerStrokeColor]="'#FFFFFF'"
+                    [animation]="true"
+                    [animationDuration]="300"
+                    [showSubtitle]="false"
+          [titleColor]="'#fdf7f7'"
+              >   </circle-progress>
+                           </div></div>
+                          
+                          </div>
+      
+                          <div class="btn-group">
+                            <div class="btn-edit"*ngIf="isLogged">
+                              <button
+                                    class="btn"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#skillModal"
+                                  >
+                                    <i class="bi bi-pencil-square"></i>
+                                  </button>
+          </div></div>
+          </tbody>
+        </table>
+
+
+         <!-- Modal para editar Skill -->
+         <div
+         class="modal fade"
+         id="skillModal"
+         tabindex="-1"
+         aria-hidden="true"
+         aria-label="modalTitle"
+         data-bs-backdrop="static"
+        >
+         <div
+           class="modal-dialog modal-lg modal-dialog-centered"
+           role="document"
+         >
+           <div class="modal-content">
+             <div class="modal-header" >
+               <h5 class="modal-title" id="modalSkill">Habilidades</h5>
+               <!---x para cerrar-->
+               <button
+                 Type="button"
+                 class="btn-close"
+                 data-bs-dismiss="modal"
+                 aria-label="Close"
+               ></button>
+             </div>
+             <div class="modal-body lg" *ngFor="let skill of skill">
+              <form (ngSubmit)="updateskill()" novalidate #form="ngForm">
+              <div class="table-responsive">
+                 <table class="table">
+                   <tbody>
+                     <tr>
+                       <th>Habilidades</th>
+                      </tr>
+                     <tr>
+                      <th>Porcentaje</th>
+                      <th>Habilidad</th>
+                       </tr>
+                       <tr>
+              
+                        <th>
+                          <div class="form-group">
+                            <label for="percent"> porcentaje: </label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="percent"
+                              name="percent"
+                              [(ngModel)]="skill.percent"
+                              
+                            />
+                          </div>
+                       </th>
+                       <th>
+                        <div class="form-group">
+                          <label for="text_circle"> habilidad: </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="text_circle"
+                            name="text_circle"
+                            [(ngModel)]="skill.text_circle"
+                            required
+                          />
+                        </div>
+                     </th>
+                     </tr>
+                     </tbody></table></div>              
+  
+               <div class="modal-footer">
+                <button
+                type="button"
+                [disabled]="!form.valid"
+                class="btn btn-success"
+                data-bs-dismiss="modal">
+                Actualizar
+            </button>
+            <button
+            type="button"
+            (click)="deleteskill(skill.id!)"
+            class="btn btn-danger"
+            data-bs-dismiss="modal"
+          >
+                  Eliminar
+                </button>
+               </div>
+             </form>
+           </div>
+         </div>
+      
+        
+            
+        
+          
+          
+           
+            

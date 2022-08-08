@@ -18,7 +18,7 @@ export class SkilService {
     return this.httpClient.post<any>(`${this.backendUrl}new/skill`, skill);
   }
   public detalleskill(id: number): Observable<any>{
-    return this.httpClient.get<any>(`${this.backendUrl}detalleskill/${id}`);
+    return this.httpClient.get<any>(`${this.backendUrl}detail/${id}`);
   }
   public updateskill(id:number,skill: Skill):Observable<any>{
     return this.httpClient.put<any>(`${this.backendUrl}editar/skill/${id}`,skill);

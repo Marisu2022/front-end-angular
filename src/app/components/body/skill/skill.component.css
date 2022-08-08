@@ -10,7 +10,7 @@
 /*--------------------circulos--------------*/
 
 .box {
-  background: #030f20;
+  background: #728db7;
   width: 300px;
   height: 400px;
   display: flex;
@@ -18,7 +18,7 @@
   align-items: center;
   position: relative;
   flex-direction: column;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 30px 60px rgba(127, 100, 177, 0.4);
   transition: transform 0.2s;
   float: left;
   margin: 10px;
@@ -27,9 +27,13 @@
 
 .box .text {
   padding: 10px;
-  color: #999;
+  color: rgb(12, 17, 18);
   font-weight: 400;
   letter-spacing: 1px;
   text-align:center;
 }
-/*---------------Acá terminan los círculos--------------*/
+/*---------------Acá terminan los círculos-  viejo-------------*/
+
+
+
+

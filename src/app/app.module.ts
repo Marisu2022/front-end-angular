@@ -8,8 +8,6 @@ import { PortadaComponent } from './components/body/portada/portada.component';
 import { SidebarComponent } from './components/body/sidebar/sidebar.component';
 import { AboutComponent } from './components/body/about/about.component';
 import { CoursesComponent } from './components/body/courses/courses.component';
-import { SkillsComponent } from './components/body/skills/skills.component';
-import { SkillComponent } from './components/body/skills/skill/skill.component';
 import { ContactComponent } from './components/footer/contact/contact.component';
 import { ContactFormComponent } from './components/footer/contact/contact-form/contact-form.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -32,15 +30,17 @@ import { NuevoCoursesComponent } from './components/body/courses/nuevo-courses.c
 import { EditarCoursesComponent } from './components/body/courses/editar-courses.component';
 import { EditarPortadaComponent } from './components/body/portada/editar-portada.component';
 import { NuevoPortadaComponent } from './components/body/portada/nuevo-portada.component';
-import { NuevoSkillComponent } from './components/body/skills/skill/nuevo-skill.component';
 import { NuevoHeaderComponent } from './components/header/nuevo-header.component';
 import { EditarHeaderComponent } from './components/header/editar-header.component';
 import { ExperienceComponent } from './components/body/experience/experience.component';
 import { OthersComponent } from './components/body/others/others.component';
 import { EducationComponent } from './components/body/education/education.component';
 import { ProjectsComponent } from './components/body/projects/projects.component';
-import { NuevoExperienceComponent } from './components/body/experience/nuevo-experience/nuevo-experience.component';
+import { NuevoExperienceComponent } from './components/body/experience/nuevo-experience.component';
 import { NuevoOthersComponent } from './components/body/others/nuevo-others/nuevo-others.component';
+import { SkillComponent } from './components/body/skill/skill.component';
+import { NuevoSkillComponent } from './components/body/skill/nuevo-skill.component';
+
 
 
 
@@ -54,8 +54,6 @@ import { NuevoOthersComponent } from './components/body/others/nuevo-others/nuev
     EducationComponent,
     CoursesComponent,
     OthersComponent,
-    SkillsComponent,
-    SkillComponent,
     ProjectsComponent,
     ContactComponent,
     ContactFormComponent,
@@ -73,12 +71,13 @@ import { NuevoOthersComponent } from './components/body/others/nuevo-others/nuev
     EditarCoursesComponent,
     EditarPortadaComponent,
     NuevoPortadaComponent,
-    NuevoSkillComponent,
     NuevoHeaderComponent,
     ExperienceComponent,
     OthersComponent,
     NuevoExperienceComponent,
-    NuevoOthersComponent
+    NuevoOthersComponent,
+    SkillComponent,
+    NuevoSkillComponent
 
 
 ],

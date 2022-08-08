@@ -1,6 +1,6 @@
 <section id="about">
   <div class="about-container-fluid-lg">
-    <div class="about-container">
+    <div class="about container">
       <h2 id="title_section">Sobre mi</h2>
       <button
       type="button"
@@ -13,11 +13,12 @@
       Agregar
     </button>
     </div>
-    <div class="card nat-card">
+    
      
       <div class="container mt-3">
+        <div class="card nat-card">
         <table class="table table-hover">
-          <tbody>
+          <tbody id="about">
             <tr *ngFor="let about of about">
               <td>
                 <p>{{ about.about_me }}</p>

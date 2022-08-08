@@ -6,9 +6,12 @@ import { NuevoAboutComponent } from './components/body/about/nuevo-about.compone
 import { NuevoCoursesComponent } from './components/body/courses/nuevo-courses.component';
 import { EditarEducationComponent } from './components/body/education/editar-education.component';
 import { NuevoEducationComponent } from './components/body/education/nuevo-education.component';
-import { NuevoExperienceComponent } from './components/body/experience/nuevo-experience/nuevo-experience.component';
+import { NuevoExperienceComponent } from './components/body/experience/nuevo-experience.component';
 import { NuevoOthersComponent } from './components/body/others/nuevo-others/nuevo-others.component';
-import { NuevoSkillComponent } from './components/body/skills/skill/nuevo-skill.component';
+import { NuevoSkillComponent } from './components/body/skill/nuevo-skill.component';
+
+
+
 
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
@@ -20,10 +23,9 @@ const routes: Routes = [
   { path: 'newabout', component: NuevoAboutComponent },
   { path: 'updateabout', component: EditarAboutComponent },
   { path: 'newexperience', component: NuevoExperienceComponent },
-  { path: 'updateexperience', component:NuevoExperienceComponent },
   { path: 'newothers', component: NuevoOthersComponent },
   { path: 'newcourses', component: NuevoCoursesComponent },
-  { path: 'newskills', component: NuevoSkillComponent },
+  { path: 'newskill', component: NuevoSkillComponent },
   { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
 ];
 
