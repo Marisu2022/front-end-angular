@@ -22,9 +22,9 @@
             <tr *ngFor="let education of education">
               <td>
                 <img
-                  class="logo"
+                  class="img_institution"
                   [src]="education.img_institution"
-                  alt="logo institución"
+                  alt="img_institution"
                 />
               </td>
               <td>{{ education.detalle }}</td>
@@ -100,8 +100,7 @@
                             ngModel
                               type="text"
                               [(ngModel)]="education.img_institution"
-                              placeholder="img_institution"
-                              name="img_institution"
+                              name="img_institution"                   
                               class="form-control"
                               id="img_institution"
                               required

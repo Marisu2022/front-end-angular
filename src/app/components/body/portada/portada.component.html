@@ -1,6 +1,6 @@
 <section id="home">
   <div class="portada-container-fluid-lg">
-    <div class="card nat-card">
+    <div class="card nat-card"*ngFor="let portada of portada">
       <div>
         <img
           class="background_img w-100 h-100"
@@ -8,12 +8,12 @@
           alt="Portada"
         />
         <img class="img_profile" w-50  h-50     d-flex
-          src = {{miPortfolio.img_profile}}/>
+          [src] ="portada.img_profile" alt="Portada"/>
       </div>
       <div class="nombre-container">
         <p>
-          {{ miPortfolio.nombre }}{{ miPortfolio.apellido }} 
-          <br />{{miPortfolio.info}}
+          {{ portada.nombre }}{{ portada.apellido }} 
+          <br />{{ portada.info}}
         </p>
       </div>
     </div>
@@ -27,6 +27,16 @@
         >
           <i class="bi bi-pencil-square"></i
         ></a>
+        <button
+        type="button"
+        class="btn btn-success"
+        data-toggle="collapse"
+        data-target
+        routerLink="/newportada"
+        *ngIf="isLogged"
+      >
+        Agregar
+      </button>
       </div>
 
       <!----------este es el div que contiene el botón eliminar
@@ -39,13 +49,13 @@
   id="portadaModal"
   tabindex="-1"
   aria-hidden="true"
-  aria-label="modalPortada"
+  aria-label="portadaModal"
   data-bs-backdrop="static"
 >
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modalTitlePOrtada" id="modalTitlePortada">Portada</h5>
+        <h5 class="modalTitlePortada" id="modalTitlePortada">Portada</h5>
         <!---x para cerrar-->
         <button
           Type="button"
@@ -54,17 +64,18 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="modal-body lg">
-        <form #editForm="ngForm">
+      <div class="modal-body lg" *ngFor="let portada of portada">
+        <form (ngSubmit)="updateportada()" novalidate #form="ngForm">
+        
           <label for="nombre">Nombre</label><br>
-          <input ngModel type="text" ngModel="{{miPortfolio.nombre}} " name="nombre"  class="form-control">
+          <input ngModel type="text" ngModel="{{portada.nombre}} " name="nombre"  class="form-control"required>
           
           <label for="apellido">Apellido</label><br>
-          <input ngModel type="text" ngModel="{{miPortfolio.apellido}} " name="apellido"  class="form-control">
+          <input ngModel type="text" [(ngModel)]="portada.apellido " name="apellido"  class="form-control"required>
           <label for="info">Información</label><br>
-          <input ngModel type="text" ngModel="{{miPortfolio.info}} " name="info"  class="form-control">
+          <input ngModel type="text" [(ngModel)]="portada.info " name="info"  class="form-control"required>
           <label for="nombre">Url de la imagen de perfil</label><br>
-          <input ngModel type="text" ngModel="{{miPortfolio.img_profile}} " name="URL"  class="form-control">
+          <input ngModel type="text" [(ngModel)]="portada.img_profile " name="URL"  class="form-control"required>
         </form>
         <div class="modal-footer">
           <button
@@ -72,7 +83,7 @@
             class="btn btn-primary"
             data-bs-dismiss="modal"
           >
-            Guardar Cambios
+            Actualizar
           </button>
           <button
             type="button"
@@ -81,6 +92,7 @@
           >
             Eliminar
           </button>
+        
 
     </div>
   </div>

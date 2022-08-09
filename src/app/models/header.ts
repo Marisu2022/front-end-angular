@@ -1,9 +1,13 @@
 export class Header {
     id?: number;
-    img_header: string;
+    
+    link_red:string;
+
    
 
-    constructor(img_header:string){
-        this.img_header = img_header;
+    constructor(link_red:string){
+    
+        this.link_red = link_red;
+        
     }
 }

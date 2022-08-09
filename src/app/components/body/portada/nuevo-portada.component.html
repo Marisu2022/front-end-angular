@@ -1,1 +1,33 @@
-<p>nuevo-portada works!</p>
+<div class="container-mt-3 m-2 p-2 ">
+    <h3 class="m-4 p-4">Agregar Nueva Portada</h3>
+    <div class="row">
+        <div class="col-md8- mx-auto-8">
+             <form (ngSubmit)="postNewPortada()"novalidate #f="ngForm">
+                                                   
+                <div class="form-group">
+                    <label for="img_profile"> imagen portada: </label>
+                    <input type="text" class="form-control" id="img_profile" name="img_profile" placeholder="img_profile"
+                    [(ngModel)]="img_profile">
+            </div>
+            <div class="form-group">
+                    <label for="nombre"> Nombre: </label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
+                    [(ngModel)]= "nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="Apellido"> Apellido: </label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" 
+                    [(ngModel)]= "apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="info"> Información: </label>
+                    <input type="text" class="form-control" id="info" name="info" placeholder="información"
+                    [(ngModel)]= "info" required>
+                </div>
+                
+                <button class="btn btn-warning btn-block m-2" [disabled]="!f.valid" >Agregar</button>
+                <button class="btn btn-success btn-block m-2" routerLink="/portfolio">Finalizar</button>
+             </form>
+        </div>
+    </div>
+

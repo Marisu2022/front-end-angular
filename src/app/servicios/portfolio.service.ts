@@ -18,7 +18,7 @@ import { Skill } from '../models/skill';
 })
 export class PortfolioService {
   //dirección de la api o endpoint del backend
-  private backendUrl: String = environment.apiBaseUrl;
+private backendUrl: String = environment.apiBaseUrl;
 
 
   constructor(

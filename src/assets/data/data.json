@@ -1,25 +1,26 @@
 {
-  "nombre": "María Susana",
+  "portada":[ 
+  {"nombre": "María Susana",
   "apellido":"Ferro",
   "info": "Full Stack Developer Jr.",
-  "img_profile": "assets/imagenes/portada3.png",
+  "img_profile": "assets/imagenes/portada3.png"}],
  
  "about": [
   {"about": "Mi trayectoria laboral inicia hace treinta años y conjuga el desarrollo de proyectos creativos mediados por TIC, la docencia y la gestión de diversas áreas de gobierno a nivel municipal y provincial. Incorporé el estudio y la puesta en marcha de nuevas tecnologías en cada desafío, buscando brindar un servicio de vanguardia. Considero primordiales el trabajo colaborativo y la planificación estratégica de todo proceso creativo. Actualmente jubilada, busco formar parte de nuevos proyectos innovadores y de impacto social."}],
   "header": [
     {
-      "img": "https://img.icons8.com/material-outlined/32/000000/github.png",
+      "img_red": "https://img.icons8.com/material-outlined/32/000000/github.png",
       "link":"https://github.com/Marisu2022"
     },
     {
-      "img": "https://img.icons8.com/ios-glyphs/32/000000/linkedin.png",
+      "img_red": "https://img.icons8.com/ios-glyphs/32/000000/linkedin.png",
       "link":"https://github.com/Marisu2022"
     },
     {
-      "img": "https://img.icons8.com/small/32/000000/whatsapp.png"
+      "img_red": "https://img.icons8.com/small/32/000000/whatsapp.png"
     },
     {
-      "img": "https://img.icons8.com/material-outlined/32/000000/find-email.png",
+      "img_red": "https://img.icons8.com/material-outlined/32/000000/find-email.png",
       "link":"mailto:lic.msferro.vla@gmail.com"
     }
   ],
