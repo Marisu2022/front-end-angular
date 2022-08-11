@@ -4,7 +4,17 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:8080/'
+  firebaseConfig :{
+    apiKey: "AIzaSyCRsLglhvgqOnsrVZxYAETrmGCgV7uoQTU",
+    authDomain: "portfolio-msferro.firebaseapp.com",
+    projectId: "portfolio-msferro",
+    storageBucket: "portfolio-msferro.appspot.com",
+    messagingSenderId: "741643639282",
+    appId: "1:741643639282:web:d5e019d98f072deabc336b",
+    measurementId: "G-TQE22RWHWW"
+  }
+
+  //apiBaseUrl: 'http://localhost:8080/'
   //apiBaseUrl: 'https://apimariaferro.herokuapp.com/'
 };
 
