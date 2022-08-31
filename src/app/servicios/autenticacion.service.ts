@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AutenticacionService {
 
-  uri = 'http://localhost:8080/auth/';
+  uri = 'https://apimariaferro.herokuapp.com/';
   
    token:any;
    logeado: boolean = true;
