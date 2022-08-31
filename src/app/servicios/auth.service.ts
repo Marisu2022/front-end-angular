@@ -10,7 +10,7 @@ import { NuevoUsuario } from '../models/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-   authURL = 'http://localhost:8080/auth/';
+   authURL = 'https://marisu-2679a.web.app';
    
 
   constructor(private httpClient:HttpClient) { }
