@@ -8,7 +8,7 @@ import {Observable}from 'rxjs';
 })
 export class CoursesService {
   
-private backendUrl:String = environment.apiBaseUrl;
+private backendUrl:String = 'https://apimariaferro.herokuapp.com/';
 
 constructor(private httpClient: HttpClient) { }
 
