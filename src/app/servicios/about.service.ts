@@ -8,7 +8,7 @@ import { About } from '../models/about';
   providedIn: 'root',
 })
 export class AboutService {
-  private backendUrl: String = 'https://apimariaferro.herokuapp.com/';
+  private backendUrl: String = environment.apiBaseUrl;
   
   constructor(private httpClient: HttpClient) {}
   public getabout(): Observable<About[]> {
