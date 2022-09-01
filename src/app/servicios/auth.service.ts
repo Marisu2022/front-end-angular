@@ -10,7 +10,7 @@ import { NuevoUsuario } from '../models/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-   authURL = 'https://apimariaferro-app.herokuapp.com/auth';
+   authURL = 'https://apimariaferro-app.herokuapp.com/';
    
 
   constructor(private httpClient:HttpClient) { }
