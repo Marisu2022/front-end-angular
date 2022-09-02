@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AutenticacionService {
 
-  uri = 'https://apimariaferro-app.herokuapp.com/';
+  uri = 'https://apimariaferro-app.herokuapp.com';
   
    token:any;
    logeado: boolean = true;
