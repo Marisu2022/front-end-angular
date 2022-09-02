@@ -12,7 +12,7 @@ export class AboutService {
   
   constructor(private httpClient: HttpClient) {}
   public getabout(): Observable<About[]> {
-    return this.httpClient.get<About[]>(`${this.backendUrl}ver/about`);
+    return this.httpClient.get<[About]>(`${this.backendUrl}ver/about`);
   }
   public postnewabout(about: About): Observable<any> {
     return this.httpClient.post<any>(`${this.backendUrl}new/about`, about);
