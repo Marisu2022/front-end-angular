@@ -15,7 +15,7 @@ export const environment = {
   },*/
 
   //apiBaseUrl: 'http://localhost:8080/'
-  apiBaseUrl: 'https://apimariaferro-app.herokuapp.com/'
+  apiBaseUrl: 'https://apimariaferro-app.herokuapp.com'
 };
 
 /*
