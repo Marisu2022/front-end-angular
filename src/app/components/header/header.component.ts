@@ -47,6 +47,11 @@ constructor( private headerService:HeaderService,
       }
     ) 
    };
+   onLogOut():void{
+    this.tokenService.logOut();
+      window.location.reload();
+    this.router.navigate(['/']);
+  };
 
   deleteheader(id?:number){
     if (id != undefined) {

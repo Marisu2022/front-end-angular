@@ -15,6 +15,10 @@
     <li class="nav-item">
       <a class="nav-link active" routerLink="/login">Iniciar Sesión</a>
     </li>
+    <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
+      <a class="nav-link active" routerLink="/portfolio">
+      Cerrar sesión</a>  
+  </li>
     <li>
       <a class="github"  href="https://github.com/Marisu2022">
         <i class="bi bi-github"></i>
