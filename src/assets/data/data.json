@@ -156,7 +156,7 @@
     },
     {
       "anio":"En proceso",
-      "img_proyecto": "assets/imagenes/RAM.jpg.png",
+      "img_proyecto": "assets/imagenes/ram.png",
       "herramientas": "FIGMA - Angular - Netbeans",
       "nombre_proyecto":"RAM",
       "descripcion_proyecto":"App para ejercitar la memoria y prevenir el Alzheimer"
