@@ -10,7 +10,7 @@ import { NuevoUsuario } from '../models/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-   authURL = 'https://marisu2022.koyeb.app/auth/';
+   authURL = 'https://porfolio-marisu2022.koyeb.app/auth/';
    
 
   constructor(private httpClient:HttpClient) { }
