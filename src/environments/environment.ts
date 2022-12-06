@@ -15,7 +15,7 @@ export const environment = {
   },*/
 
   //apiBaseUrl: 'http://localhost:8080/'
-  apiBaseUrl: 'https://marisu2022.koyeb.app/'
+  apiBaseUrl: 'https://porfolio-marisu2022.koyeb.app/'
 };
 
 /*
