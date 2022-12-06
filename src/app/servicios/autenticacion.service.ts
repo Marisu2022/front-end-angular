@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AutenticacionService {
 
-  uri = 'https://marisu2022.koyeb.app';
+  uri = 'https://porfolio-marisu2022.koyeb.app';
   
    token:any;
    logeado: boolean = true;
